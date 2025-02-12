@@ -1,13 +1,15 @@
 import { Button } from '@heroui/react'
-import './App.css'
-import ThemeSwitcher from './app/components/ThemeSwitcher'
+import ThemeSwitcher from './components/common/ThemeSwitcher'
+import { Env } from './utils/Env'
 
 function App() {
+  const { TITLE_APP } = Env
+
   return (
     <>
       <div className="flex flex-col justify-start items-center h-screen mt-10">
         <div className="flex flex-row">
-          <h1 className="text-3xl text-primary mr-5">Vite + React</h1>
+          <h1 className="text-3xl text-primary mr-5">Environment: {TITLE_APP}</h1>
           <ThemeSwitcher />
         </div>
         <div className="flex flex-wrap gap-4 items-center h-screen">
