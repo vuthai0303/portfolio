@@ -1,6 +1,7 @@
 // components/ThemeSwitcher.tsx
 import { Switch } from '@heroui/react'
 import { useTheme } from '@heroui/use-theme'
+import { useEffect, useState } from 'react'
 
 export const MoonIcon = (props: { className: string }) => {
   return (
@@ -41,10 +42,16 @@ export const SunIcon = (props: { className: string }) => {
 }
 
 export default function ThemeSwitcher() {
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
+
+  const [isSelected, setIsSelected] = useState(false)
+
+  useEffect(() => {
+    setIsSelected(theme === 'light')
+  }, [theme])
 
   const handleThemeChange = (isSelected: boolean) => {
-    setTheme(!isSelected ? 'dark' : 'light')
+    setTheme(!isSelected ? 'purple-dark' : 'light')
   }
 
   return (
@@ -55,6 +62,7 @@ export default function ThemeSwitcher() {
       thumbIcon={({ isSelected, className }) =>
         isSelected ? <SunIcon className={className} /> : <MoonIcon className={className} />
       }
+      isSelected={isSelected}
       onValueChange={handleThemeChange}
     />
   )

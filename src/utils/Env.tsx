@@ -3,6 +3,7 @@ const getEnvironment = () => {
 
   return {
     TITLE_APP: VITE_TITLE_APP,
+    HOST: import.meta.env.VITE_HOST,
   }
 }
 
