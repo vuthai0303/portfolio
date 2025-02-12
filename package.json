@@ -1,6 +1,6 @@
 {
   "name": "vuthai0303.github.io",
-  "homepage": "https://vuthai0303.github.io/portfolio",
+  "homepage": "https://github.com/vuthai0303/portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -44,4 +44,3 @@
     "vite": "^6.1.0"
   }
 }
-
