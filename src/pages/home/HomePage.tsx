@@ -1,18 +1,21 @@
 // src/pages/HomePage.tsx
 import { Button } from '@heroui/react'
 import React from 'react'
-import ThemeSwitcher from '../../components/common/ThemeSwitcher'
+import { useTranslation } from 'react-i18next'
 import { Env } from '../../utils/Env'
 
 const HomePage: React.FC = () => {
   const { TITLE_APP } = Env
 
+  const { t } = useTranslation()
+
   return (
     <>
       <div className="flex flex-col justify-start items-center h-screen mt-10">
         <div className="flex flex-row">
-          <h1 className="text-3xl text-primary mr-5">Environment: {TITLE_APP}</h1>
-          <ThemeSwitcher />
+          <h1 className="text-3xl text-primary mr-5">
+            {t('common.environment')} : {TITLE_APP}
+          </h1>
         </div>
         <div className="flex flex-wrap gap-4 items-center h-screen">
           <Button color="primary" variant="solid">

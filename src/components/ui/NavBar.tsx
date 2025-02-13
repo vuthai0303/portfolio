@@ -8,7 +8,10 @@ import {
   NavbarMenuToggle,
 } from '@heroui/react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import LanguageSwitcher from '../common/LanguageSwitcher'
+import ThemeSwitcher from '../common/ThemeSwitcher'
 
 export const AcmeLogo = () => {
   return (
@@ -25,6 +28,7 @@ export const AcmeLogo = () => {
 
 const NavBar = () => {
   const location = useLocation()
+  const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -44,31 +48,29 @@ const NavBar = () => {
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem isActive={location.pathname == '/'}>
             <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to="/">
-              Home
+              {t('NavBar.home')}
             </NavLink>
           </NavbarItem>
           <NavbarItem isActive={location.pathname == '/about'}>
             <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to="/about">
-              About
+              {t('NavBar.about')}
             </NavLink>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
-          {/* <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
+          <NavbarItem className="hidden lg:flex">
+            <ThemeSwitcher />
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
-              Sign Up
-            </Button>
-          </NavbarItem> */}
+            <LanguageSwitcher />
+          </NavbarItem>
         </NavbarContent>
         <NavbarMenu>
           <NavbarMenuItem isActive={location.pathname == '/'}>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">{t('NavBar.home')}</NavLink>
           </NavbarMenuItem>
           <NavbarMenuItem isActive={location.pathname == '/about'}>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">{t('NavBar.about')}</NavLink>
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>

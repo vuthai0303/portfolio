@@ -1,0 +1,12 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "changeLanguage": "Change Language",
+    "environment": "Environment"
+  },
+  "NavBar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  }
+}

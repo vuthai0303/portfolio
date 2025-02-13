@@ -1,0 +1,12 @@
+{
+  "common": {
+    "welcome": "Xin chào",
+    "changeLanguage": "Thay đổi ngôn ngữ",
+    "environment": "Môi trường"
+  },
+  "NavBar": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "contact": "Liên hệ"
+  }
+}
