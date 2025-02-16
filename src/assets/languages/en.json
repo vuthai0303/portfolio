@@ -8,5 +8,11 @@
     "home": "Home",
     "about": "About",
     "contact": "Contact"
+  },
+  "Home": {
+    "hi": "Hi",
+    "title": "I'm Vũ Thái 👋",
+    "title_desription": "Full-Stack web developer, Software engineer, and Game developer.",
+    "description": "I'm Vũ Thái, a Full-Stack web developer based in Hồ Chí Minh, Việt Nam. I love coding, gaming and travelling. Building something interesting and useful is my passion."
   }
 }

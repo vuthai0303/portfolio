@@ -8,5 +8,11 @@
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "contact": "Liên hệ"
+  },
+  "Home": {
+    "hi": "Xin chào",
+    "title": "Tôi là Vũ Thái 👋",
+    "title_desription": "Nhà phát triển Web Full-Stack, phát triển phần mềm, và Game.",
+    "description": "Tôi là Vũ Thái, một nhà phát triển Web Full-Stack đang làm việc tại Hồ Chí Minh, Việt Nam. Tôi thích coding, chơi game và du lịch. Xây dựng thứ gì đó thú vị và hữu ích là niềm đam mê của tôi."
   }
 }
