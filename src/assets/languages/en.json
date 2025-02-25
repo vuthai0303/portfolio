@@ -7,7 +7,9 @@
   "NavBar": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "project": "Project",
+    "experience": "Experience"
   },
   "Home": {
     "hi": "Hi",

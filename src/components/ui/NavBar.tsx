@@ -10,14 +10,33 @@ import {
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
+import { NavBarItem } from '../../types/NavBarItem'
 import LanguageSwitcher from '../common/LanguageSwitcher'
 import ThemeSwitcher from '../common/ThemeSwitcher'
 
 const NavBar = () => {
-  const location = useLocation()
   const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const navBarItems = [
+    {
+      to: '/',
+      title: t('NavBar.home'),
+    },
+    {
+      to: '/about',
+      title: t('NavBar.about'),
+    },
+    {
+      to: '/project',
+      title: t('NavBar.project'),
+    },
+    {
+      to: '/experience',
+      title: t('NavBar.experience'),
+    },
+  ]
 
   return (
     <>
@@ -37,16 +56,7 @@ const NavBar = () => {
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavbarItem isActive={location.pathname == '/'}>
-            <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to="/">
-              {t('NavBar.home')}
-            </NavLink>
-          </NavbarItem>
-          <NavbarItem isActive={location.pathname == '/about'}>
-            <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to="/about">
-              {t('NavBar.about')}
-            </NavLink>
-          </NavbarItem>
+          <NavBarItems navBarLst={navBarItems} isMenuItem={false} />
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
@@ -57,19 +67,50 @@ const NavBar = () => {
           </NavbarItem>
         </NavbarContent>
         <NavbarMenu>
-          <NavbarMenuItem isActive={location.pathname == '/'}>
-            <NavLink to="/">{t('NavBar.home')}</NavLink>
-          </NavbarMenuItem>
-          <NavbarMenuItem isActive={location.pathname == '/about'}>
-            <NavLink to="/about">{t('NavBar.about')}</NavLink>
-          </NavbarMenuItem>
+          <NavBarItems navBarLst={navBarItems} isMenuItem={true} />
         </NavbarMenu>
       </Navbar>
-      <div className="w-full h-full">
-        <main className="w-full h-full">
-          <Outlet />
-        </main>
+      <div className="w-full h-fit">
+        <Outlet />
       </div>
+    </>
+  )
+}
+
+const NavBarItems = ({
+  navBarLst,
+  isMenuItem = false,
+}: {
+  navBarLst: NavBarItem[]
+  isMenuItem: boolean
+}) => {
+  const location = useLocation()
+
+  return (
+    <>
+      {navBarLst.map((item, index) => {
+        return !isMenuItem ? (
+          <NavbarItem
+            key={index}
+            isActive={location.pathname == item.to}
+            className="hover:text-primary"
+          >
+            <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to={item.to}>
+              {item.title}
+            </NavLink>
+          </NavbarItem>
+        ) : (
+          <NavbarMenuItem
+            key={index}
+            isActive={location.pathname == item.to}
+            className="hover:text-primary"
+          >
+            <NavLink className={({ isActive }) => (isActive ? 'text-primary' : '')} to={item.to}>
+              {item.title}
+            </NavLink>
+          </NavbarMenuItem>
+        )
+      })}
     </>
   )
 }

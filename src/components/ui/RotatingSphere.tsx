@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 interface Logo {
   initial: { x: number; y: number; z: number }
@@ -15,7 +15,7 @@ const RotatingSphere: React.FC = () => {
   // Đánh dấu chuột có đang ở trong vùng canvas hay không
   const isMouseInsideRef = useRef<boolean>(false)
   // Tốc độ quay mặc định
-  const [defautSpeed, setDefaultSpeed] = useState(0.00005)
+  const defautSpeed = 0.00005
 
   // Danh sách logo (bổ sung theo thứ tự yêu cầu)
   const logosSrc = [
