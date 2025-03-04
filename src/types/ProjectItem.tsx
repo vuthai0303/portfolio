@@ -7,7 +7,7 @@ export interface ProjectItem {
   imageHref: string
   videoHref: string
   title: string
-  desciption: string
+  desciption: string[]
   links: Linkitem[]
   tags: string[]
 }
