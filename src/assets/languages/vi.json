@@ -12,8 +12,13 @@
   },
   "Home": {
     "hi": "Xin chào",
-    "title": "Tôi là Vũ Thái 👋",
+    "title": {
+      "title_1": "I'm Vũ Thái 👋",
+      "title_2": "I'm a web developer.",
+      "title_3": "I'm a game developer.",
+      "title_4": "I'm a software engineer."
+    },
     "title_desription": "Nhà phát triển Web Full-Stack, phát triển phần mềm, và Game.",
-    "description": "Tôi là Vũ Thái, một nhà phát triển Web Full-Stack đang làm việc tại Hồ Chí Minh, Việt Nam. Tôi thích coding, chơi game và du lịch. Xây dựng thứ gì đó thú vị và hữu ích là niềm đam mê của tôi."
+    "description": "Tôi tên là Thái Duy Vũ, là cử nhân Khoa học và Máy tính của Đại học Bách Khoa TP HCM với 2 năm kinh nghiệm chuyên sâu trong lĩnh vực lập trình web fullstack. Tôi luôn tràn đầy năng lượng và thái độ tích cực trong công việc, luôn sẵn sàng học hỏi và áp dụng các công nghệ, ngôn ngữ lập trình, framework và thư viện mới một cách nhanh chóng. Nhờ tính cách vui vẻ, hòa đồng và tinh thần giúp đỡ người khác, tôi đã từng góp phần tạo nên môi trường làm việc thân thiện và hiệu quả. Mặc dù tôi có xu hướng hướng nội và không giỏi trong việc bắt chuyện với người lạ, nhưng điều này lại cho phép tôi tập trung cao độ vào công việc và luôn nỗ lực hoàn thiện bản thân qua từng dự án. Tôi tự tin rằng với sự chủ động, cầu tiến và khả năng thích nghi nhanh với những thay đổi công nghệ, tôi sẽ mang lại giá trị thiết thực cho tổ chức và đồng nghiệp."
   }
 }

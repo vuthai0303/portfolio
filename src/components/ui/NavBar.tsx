@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { NavBarItem } from '../../types/NavBarItem'
 import LanguageSwitcher from '../common/LanguageSwitcher'
+import SplashCursor from '../common/SplashCursor'
 import ThemeSwitcher from '../common/ThemeSwitcher'
 
 const NavBar = () => {
@@ -25,10 +26,6 @@ const NavBar = () => {
       title: t('NavBar.home'),
     },
     {
-      to: '/about',
-      title: t('NavBar.about'),
-    },
-    {
       to: '/project',
       title: t('NavBar.project'),
     },
@@ -40,6 +37,7 @@ const NavBar = () => {
 
   return (
     <>
+      <SplashCursor />
       <Navbar shouldHideOnScroll isBordered onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarMenuToggle
@@ -71,6 +69,12 @@ const NavBar = () => {
         </NavbarMenu>
       </Navbar>
       <div className="w-full h-fit">
+        {/* <AuroraBG
+          colorStops={['#3A29FF', '#FF94B4', '#FF3232']}
+          blend={0.5}
+          amplitude={1.0}
+          speed={0.5}
+        /> */}
         <Outlet />
       </div>
     </>

@@ -13,8 +13,13 @@
   },
   "Home": {
     "hi": "Hi",
-    "title": "I'm Vũ Thái 👋",
+    "title": {
+      "title_1": "I'm Vũ Thái 👋",
+      "title_2": "I'm a web developer.",
+      "title_3": "I'm a game developer.",
+      "title_4": "I'm a software engineer."
+    },
     "title_desription": "Full-Stack web developer, Software engineer, and Game developer.",
-    "description": "I'm Vũ Thái, a Full-Stack web developer based in Hồ Chí Minh, Việt Nam. I love coding, gaming and travelling. Building something interesting and useful is my passion."
+    "description": "My name is Thái Duy Vũ, and I hold a Bachelor's degree in Computer Science from Ho Chi Minh City University of Technology. With two years of experience in full-stack web development, I have honed my ability to quickly learn and master new programming languages, frameworks, and libraries, regardless of the challenge. I am known for my cheerful and approachable nature, always ready to support my colleagues while maintaining a dedicated work ethic. I thrive on learning new technologies and continuously improving my skills, ensuring that I stay at the forefront of industry trends. While I tend to be more introverted and may find initiating conversations with strangers challenging, this trait allows me to focus deeply on my work and deliver meticulous results. I am confident that my technical expertise, proactive attitude, and commitment to excellence will make me a valuable asset to any team."
   }
 }

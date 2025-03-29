@@ -16,13 +16,19 @@ const HomePage: React.FC = () => {
             <div className="flex flex-row px-10 mt-10">
               {/* title is here */}
               <Avatar
-                className="w-20 h-20 text-large"
+                className="w-25 h-25 text-large"
                 src="https://i.pravatar.cc/150?u=a04258114e29026708c"
               />
-              <div className="text-3xl md:text-6xl font-bold tracking-tight flex flex-row items-start ml-10">
+              <div className="text-3xl md:text-6xl font-bold tracking-tight flex flex-row items-center ml-10">
                 Hi,
                 <Typewriter
-                  text={t('Home.title')}
+                  text={[
+                    t('Home.title.title_1'),
+                    t('Home.title.title_2'),
+                    t('Home.title.title_3'),
+                    t('Home.title.title_4'),
+                  ]}
+                  speed={200}
                   className="ml-2 font-display text-center drop-shadow-sm text-3xl md:text-6xl font-bold tracking-tight"
                 />
               </div>
@@ -31,16 +37,13 @@ const HomePage: React.FC = () => {
               <div className="flex flex-col">
                 {/* description is here */}
                 <div className="flex flex-row">
-                  <div className="w-1/2 p-3 pr-5 mt-20 flex flex-col justify-between">
+                  <div className="w-1/2 p-3 pr-5 flex flex-col justify-between">
                     <div className="flex flex-col">
-                      <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl opacity-80">
-                        {t('Home.title_desription')}
-                      </h2>
                       <p className="mt-6 text-base text-muted-foreground">
                         {t('Home.description')}
                       </p>
                     </div>
-                    <div className="flex flex-row">
+                    <div className="flex flex-row mt-10">
                       {/* link social is here */}
                       <div className="flex gap-1 items-center">
                         <Link isExternal href="https://www.facebook.com/vuthai0303">

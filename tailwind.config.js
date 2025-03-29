@@ -9,7 +9,31 @@ export default {
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        typing: {
+          '0%': {
+            width: '0%',
+            visibility: 'hidden',
+          },
+          '100%': {
+            width: '100%',
+          },
+        },
+        blink: {
+          '50%': {
+            borderColor: 'black',
+          },
+          '100%': {
+            borderColor: 'white',
+          },
+        },
+      },
+      animation: {
+        typing: 'typing 3s steps(30) infinite alternate, blink .7s infinite',
+        blink: 'blink .7s infinite',
+      },
+    },
   },
   darkMode: 'class',
   plugins: [
