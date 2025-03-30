@@ -1,9 +1,9 @@
 const getEnvironment = () => {
-  const { VITE_TITLE_APP } = import.meta.env
+  const { VITE_TITLE_APP, VITE_HOST } = import.meta.env
 
   return {
     TITLE_APP: VITE_TITLE_APP,
-    HOST: import.meta.env.VITE_HOST,
+    HOST: VITE_HOST,
   }
 }
 

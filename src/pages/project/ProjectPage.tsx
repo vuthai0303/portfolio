@@ -1,4 +1,4 @@
-import { Button, Card, CardFooter, CardHeader, Chip, Image } from '@heroui/react'
+import { Button, Card, CardFooter, CardHeader, Chip, Image, Link } from '@heroui/react'
 import { Github, HardDrive } from 'lucide-react'
 import ChessGame from '../../assets/videos/projects/ChessGame.mp4'
 import GiupViec from '../../assets/videos/projects/GiupViec.mp4'
@@ -91,7 +91,7 @@ const ProjectPage = () => {
     },
   ]
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-20 py-5 pt-20">
+    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-20 py-5 pt-10">
       {projects?.map((project, index) => {
         return (
           <Card key={index} isFooterBlurred className="min-h-[450px] h-fit">
@@ -100,7 +100,7 @@ const ProjectPage = () => {
                 colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
                 animationSpeed={3}
                 showBorder={false}
-                className="font-bold text-2xl"
+                className="font-bold text-2xl mx-auto justify-center items-center"
               >
                 {project.title}
               </GradientText>
@@ -125,7 +125,13 @@ const ProjectPage = () => {
                     {project?.desciption?.map((e, index) => {
                       return (
                         <li key={index}>
-                          <ShinyText text={e} disabled={false} speed={3} className="custom-class" />
+                          <ShinyText
+                            text={e}
+                            textColor="primary"
+                            backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
+                            speed={3}
+                            className="custom-class"
+                          />
                         </li>
                       )
                     })}
@@ -134,17 +140,17 @@ const ProjectPage = () => {
                 <div className="flex flex-row gap-1 text-tiny">
                   {project?.links?.map((link, index) => {
                     return (
-                      <Button
-                        key={index}
-                        isIconOnly
-                        aria-label={link.text}
-                        size="sm"
-                        variant="faded"
-                        color="primary"
-                        onPress={() => window.open(link.href, '_blank')}
-                      >
-                        {link.text == 'Github' ? <Github /> : <HardDrive />}
-                      </Button>
+                      <Link key={index} isExternal href={link.href}>
+                        <Button
+                          isIconOnly
+                          size="sm"
+                          aria-label={link.text}
+                          color="primary"
+                          variant="light"
+                        >
+                          {link.text == 'Github' ? <Github /> : <HardDrive />}
+                        </Button>
+                      </Link>
                     )
                   })}
                 </div>

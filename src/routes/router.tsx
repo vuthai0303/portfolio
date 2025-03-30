@@ -9,7 +9,7 @@ const AppRouter = () => {
   const { HOST } = Env
 
   return (
-    <BrowserRouter basename={`${HOST}`}>
+    <BrowserRouter basename={`/${HOST}`}>
       <Routes>
         <Route path="" element={<NavBar />}>
           <Route index element={<HomePage />} />

@@ -11,9 +11,9 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className="flex justify-center items-start">
-        <Card className="min-w-[600px] w-2/3 h-full rounded-b-lg" radius="none">
+        <Card className="min-w-[600px] w-2/3 h-full rounded-b-lg bg-background" radius="none">
           <CardBody className="p-10">
-            <div className="flex flex-row px-10 mt-10">
+            <div className="flex flex-row px-10">
               {/* title is here */}
               <Avatar
                 className="w-25 h-25 text-large"

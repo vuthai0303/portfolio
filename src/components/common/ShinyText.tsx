@@ -2,28 +2,31 @@ import React from 'react'
 
 interface ShinyTextProps {
   text: string
-  disabled?: boolean
   speed?: number
   className?: string
+  textColor?: string
+  backgroundImage?: string
 }
 
 const ShinyText: React.FC<ShinyTextProps> = ({
   text,
-  disabled = false,
   speed = 5,
+  textColor = 'text-primary',
+  backgroundImage = 'linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)',
   className = '',
 }) => {
-  const animationDuration = `${speed}s`
+  const gradientStyle = {
+    animationDuration: `${speed}s`,
+    backgroundImage: backgroundImage,
+  }
 
   return (
     <div
-      className={`text-primary/80 bg-clip-text  inline-block ${disabled ? '' : 'animate-shine'} ${className}`}
+      className={`${textColor} bg-clip-text inline-block animate-shine ${className}`}
       style={{
-        backgroundImage:
-          'linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)',
+        ...gradientStyle,
         backgroundSize: '200% 100%',
         WebkitBackgroundClip: 'text',
-        animationDuration: animationDuration,
       }}
     >
       {text}
