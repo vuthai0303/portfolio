@@ -11,7 +11,7 @@ interface TimeLineProps {
     description: string
     date: string
     icon: React.ReactNode
-    tasks: {
+    tasks?: {
       [key: string]: {
         title: string
         description: string
@@ -56,13 +56,6 @@ const TimeLine: React.FC<TimeLineProps> = ({ timeline }) => {
                 speed={3}
                 className="text-sm font-normal"
               />
-              {/* <ShinyText
-                text={item.subTitle}
-                textColor="text-primary/80"
-                backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
-                speed={3}
-                className="text-base font-semibold"
-              /> */}
               <GradientText
                 colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
                 animationSpeed={5}
@@ -80,11 +73,13 @@ const TimeLine: React.FC<TimeLineProps> = ({ timeline }) => {
                   className="text-base font-normal italic"
                 />
               )}
-              {item.tasks && (
+              {item.tasks && Object.keys(item.tasks).length > 0 && (
                 <div className="flex flex-col gap-1 justify-center items-start">
-                  {Object.entries(item.tasks).map(([key, task]) => (
-                    <TaskItem key={key} task={task} />
-                  ))}
+                  {Object.entries(item.tasks).map(([key, tasks]) =>
+                    tasks.map((task, taskIndex) => (
+                      <TaskItem key={`${key}-${taskIndex}`} task={task} />
+                    )),
+                  )}
                 </div>
               )}
             </span>

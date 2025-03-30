@@ -9,44 +9,65 @@ const ExperiencePage = () => {
       subTitle: 'Full Stack Developer',
       description: `Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án của khách hàng.`,
       tasks: {
-        Heatmap: {
-          title: 'Heatmap',
-          description: 'Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng.',
-          time: '2025/01 - Now',
-          frontend: ['HTML', 'CSS', 'Typescript', 'Vite', 'React'],
-          backend: ['Serverless', 'AWS', 'Lambda', 'DynamoDB', 'API Gateway', 'Amplify', 'cognito'],
-        },
-        GCS: {
-          title: 'GCS',
-          description: 'Dự án quản lý hợp đồng mua bán bất động sản.',
-          time: '2024/06 - 2025/03',
-          frontend: ['HTML', 'CSS', 'Javascript', 'Vue'],
-          backend: ['Java', 'Spring Boot', 'Oracle'],
-          other: ['JUnit', 'Mockito'],
-        },
-        Fluzo: {
-          title: 'Fluzo',
-          description:
-            'Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business.',
-          time: '2024/02 - 2024/04',
-          frontend: ['HTML', 'CSS', 'Javascript', 'Angular', 'Electron'],
-          backend: ['Java', 'Spring Boot', 'Oracle'],
-          other: ['JUnit', 'Mockito'],
-        },
-        CIIC: {
-          title: 'CIIC',
-          description: 'Dự án hỗ trợ quản lý đơn từ.',
-          time: '2023/12 - 2024/02',
-          frontend: ['HTML', 'CSS', 'Javascript', 'C#', 'ASP.NET'],
-          backend: ['C#', 'ASP.NET', 'SQL Server'],
-        },
-        RMS: {
-          title: 'Resources Management System',
-          description: 'Dự án hỗ trợ quản lý nhân sự.',
-          time: '2023/10 - 2023/11',
-          frontend: ['HTML', 'CSS', 'Javascript', 'Angular'],
-          backend: ['Java', 'Spring Boot', 'PostgreSQL'],
-        },
+        Heatmap: [
+          {
+            title: 'Heatmap',
+            description: 'Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng.',
+            time: '2025/01 - Now',
+            frontend: ['HTML', 'CSS', 'Typescript', 'Vite', 'React'],
+            backend: [
+              'Serverless',
+              'AWS',
+              'Lambda',
+              'DynamoDB',
+              'API Gateway',
+              'Amplify',
+              'cognito',
+            ],
+            other: [],
+          },
+        ],
+        GCS: [
+          {
+            title: 'GCS',
+            description: 'Dự án quản lý hợp đồng mua bán bất động sản.',
+            time: '2024/06 - 2025/03',
+            frontend: ['HTML', 'CSS', 'Javascript', 'Vue'],
+            backend: ['Java', 'Spring Boot', 'Oracle'],
+            other: ['JUnit', 'Mockito'],
+          },
+        ],
+        Fluzo: [
+          {
+            title: 'Fluzo',
+            description:
+              'Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business.',
+            time: '2024/02 - 2024/04',
+            frontend: ['HTML', 'CSS', 'Javascript', 'Angular', 'Electron'],
+            backend: ['Java', 'Spring Boot', 'Oracle'],
+            other: ['JUnit', 'Mockito'],
+          },
+        ],
+        CIIC: [
+          {
+            title: 'CIIC',
+            description: 'Dự án hỗ trợ quản lý đơn từ.',
+            time: '2023/12 - 2024/02',
+            frontend: ['HTML', 'CSS', 'Javascript', 'C#', 'ASP.NET'],
+            backend: ['C#', 'ASP.NET', 'SQL Server'],
+            other: [],
+          },
+        ],
+        RMS: [
+          {
+            title: 'Resources Management System',
+            description: 'Dự án hỗ trợ quản lý nhân sự.',
+            time: '2023/10 - 2023/11',
+            frontend: ['HTML', 'CSS', 'Javascript', 'Angular'],
+            backend: ['Java', 'Spring Boot', 'PostgreSQL'],
+            other: [],
+          },
+        ],
       },
       date: '2023/10',
       icon: <BriefcaseBusiness />,
