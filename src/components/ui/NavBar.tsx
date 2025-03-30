@@ -14,6 +14,7 @@ import { NavBarItem } from '../../types/NavBarItem'
 import LanguageSwitcher from '../common/LanguageSwitcher'
 import SplashCursor from '../common/SplashCursor'
 import ThemeSwitcher from '../common/ThemeSwitcher'
+import AuroraBG from './AuroraBG'
 
 const NavBar = () => {
   const { t } = useTranslation()
@@ -68,13 +69,15 @@ const NavBar = () => {
           <NavBarItems navBarLst={navBarItems} isMenuItem={true} />
         </NavbarMenu>
       </Navbar>
-      <div className="w-full h-fit">
-        {/* <AuroraBG
-          colorStops={['#3A29FF', '#FF94B4', '#FF3232']}
-          blend={0.5}
-          amplitude={1.0}
-          speed={0.5}
-        /> */}
+      <div className="w-full h-fit bg-black">
+        <div className="relative">
+          <AuroraBG
+            colorStops={['#3A29FF', '#FF94B4', '#FF3232']}
+            blend={0.5}
+            amplitude={1.0}
+            speed={0.5}
+          />
+        </div>
         <Outlet />
       </div>
     </>

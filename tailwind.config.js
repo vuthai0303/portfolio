@@ -28,10 +28,21 @@ export default {
             borderColor: 'white',
           },
         },
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
+        },
       },
       animation: {
         typing: 'typing 3s steps(30) infinite alternate, blink .7s infinite',
         blink: 'blink .7s infinite',
+        gradient: 'gradient 8s linear infinite',
+        shine: 'shine 5s linear infinite',
       },
     },
   },

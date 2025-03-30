@@ -1,10 +1,12 @@
-import { Button, Card, CardFooter, CardHeader, Chip, Image, ScrollShadow } from '@heroui/react'
+import { Button, Card, CardFooter, CardHeader, Chip, Image } from '@heroui/react'
 import { Github, HardDrive } from 'lucide-react'
 import ChessGame from '../../assets/videos/projects/ChessGame.mp4'
 import GiupViec from '../../assets/videos/projects/GiupViec.mp4'
 import ShootingGame from '../../assets/videos/projects/ShootingGame.mp4'
 import shootTank from '../../assets/videos/projects/shootTank.mp4'
 import SurvivalGame from '../../assets/videos/projects/SurvivalGame.mp4'
+import GradientText from '../../components/common/GradientText'
+import ShinyText from '../../components/common/ShinyText'
 import { ProjectItem } from '../../types/ProjectItem'
 
 const ProjectPage = () => {
@@ -93,8 +95,15 @@ const ProjectPage = () => {
       {projects?.map((project, index) => {
         return (
           <Card key={index} isFooterBlurred className="min-h-[450px] h-fit">
-            <CardHeader className="bg-primary z-10 flex-col items-start">
-              <h4 className="text-white font-bold text-xl">{project.title}</h4>
+            <CardHeader className="z-10 flex-col items-start">
+              <GradientText
+                colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
+                animationSpeed={3}
+                showBorder={false}
+                className="font-bold text-2xl"
+              >
+                {project.title}
+              </GradientText>
             </CardHeader>
             {project.imageHref ? (
               <Image
@@ -109,16 +118,18 @@ const ProjectPage = () => {
               </video>
             )}
 
-            <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 flex-col items-start gap-2 h-fit">
+            <CardFooter className="bottom-0 z-10 flex-col items-start gap-2 h-fit">
               <div className="w-full flex flex-row justify-between">
                 <div className="w-4/5">
-                  <ScrollShadow hideScrollBar className=" h-[60px]">
-                    <ul className="text-black list-none">
-                      {project?.desciption?.map((e, index) => {
-                        return <li key={index}>{e}</li>
-                      })}
-                    </ul>
-                  </ScrollShadow>
+                  <ul className="list-none">
+                    {project?.desciption?.map((e, index) => {
+                      return (
+                        <li key={index}>
+                          <ShinyText text={e} disabled={false} speed={3} className="custom-class" />
+                        </li>
+                      )
+                    })}
+                  </ul>
                 </div>
                 <div className="flex flex-row gap-1 text-tiny">
                   {project?.links?.map((link, index) => {
