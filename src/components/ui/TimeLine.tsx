@@ -29,7 +29,7 @@ const TimeLine: React.FC<TimeLineProps> = ({ timeline }) => {
     <ol className="relative border-s border-primary">
       {timeline.map((item, index) => (
         <li key={index} className="mb-10 ms-6">
-          <span className=" absolute flex items-center justify-center w-10 h-10 bg-zinc-200 rounded-full -start-5 ring-8 ring-background ">
+          <span className=" absolute flex items-center justify-center w-10 h-10 bg-background rounded-full -start-5 ring-2 ring-primary ">
             <span className="w-6 h-6 text-primary">{item.icon}</span>
           </span>
           <div className="translate-x-2">

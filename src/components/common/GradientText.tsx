@@ -6,6 +6,7 @@ interface GradientTextProps {
   colors?: string[]
   animationSpeed?: number
   showBorder?: boolean
+  baseStyle?: object
 }
 
 export default function GradientText({
@@ -14,6 +15,7 @@ export default function GradientText({
   colors = ['#ffaa40', '#9c40ff', '#ffaa40'],
   animationSpeed = 8,
   showBorder = false,
+  baseStyle = {},
 }: GradientTextProps) {
   const gradientStyle = {
     backgroundImage: `linear-gradient(to right, ${colors.join(', ')})`,
@@ -23,6 +25,7 @@ export default function GradientText({
   return (
     <div
       className={`relative flex max-w-fit flex-row rounded-[1.25rem] font-medium backdrop-blur transition-shadow duration-500 overflow-hidden cursor-pointer ${className}`}
+      style={{ ...baseStyle }}
     >
       {showBorder && (
         <div

@@ -11,6 +11,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import { NavBarItem } from '../../types/NavBarItem'
+import GradientText from '../common/GradientText'
 import LanguageSwitcher from '../common/LanguageSwitcher'
 import SplashCursor from '../common/SplashCursor'
 import ThemeSwitcher from '../common/ThemeSwitcher'
@@ -50,7 +51,15 @@ const NavBar = () => {
               className="d-inline-block align-top size-16"
               alt="VT logo"
             />
-            <p className="font-bold text-inherit ml-5">Vũ Thái</p>
+            <GradientText
+              colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+              animationSpeed={5}
+              showBorder={false}
+              className="font-bold text-xl ml-2"
+              baseStyle={{ fontWeight: 700 }}
+            >
+              Vũ Thái
+            </GradientText>
           </NavbarBrand>
         </NavbarContent>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">

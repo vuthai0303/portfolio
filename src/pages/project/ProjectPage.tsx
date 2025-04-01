@@ -1,5 +1,6 @@
 import { Button, Card, CardFooter, CardHeader, Chip, Image, Link } from '@heroui/react'
 import { Github, HardDrive } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import ChessGame from '../../assets/videos/projects/ChessGame.mp4'
 import GiupViec from '../../assets/videos/projects/GiupViec.mp4'
 import ShootingGame from '../../assets/videos/projects/ShootingGame.mp4'
@@ -10,14 +11,14 @@ import ShinyText from '../../components/common/ShinyText'
 import { ProjectItem } from '../../types/ProjectItem'
 
 const ProjectPage = () => {
+  const { t } = useTranslation()
+
   const projects: ProjectItem[] = [
     {
       imageHref: '',
       videoHref: GiupViec,
       title: 'GiupViec App',
-      desciption: [
-        '- It is a system that assists in finding and connecting domestic helpers with clients',
-      ],
+      desciption: [t('Project.GiupViec.description1')],
       links: [
         {
           text: 'Github',
@@ -35,9 +36,9 @@ const ProjectPage = () => {
       videoHref: ChessGame,
       title: 'Tank Chess',
       desciption: [
-        '- It is a Chess game',
-        '- Play with AI',
-        "- Use Unity's Data-Oriented Technology Stack (DOTS)",
+        t('Project.ChessGame.description1'),
+        t('Project.ChessGame.description2'),
+        t('Project.ChessGame.description3'),
       ],
       links: [
         {
@@ -51,7 +52,7 @@ const ProjectPage = () => {
       imageHref: '',
       videoHref: shootTank,
       title: 'Shoot Tank',
-      desciption: ['- It is a game project improved from tutorial'],
+      desciption: [t('Project.shootTank.description1')],
       links: [
         {
           text: 'GoogleDrive',
@@ -64,10 +65,7 @@ const ProjectPage = () => {
       imageHref: '',
       videoHref: ShootingGame,
       title: 'Shooter game',
-      desciption: [
-        '- It is a Shoot’em up gam',
-        "- Use Unity's Data-Oriented Technology Stack (DOTS)",
-      ],
+      desciption: [t('Project.ShootingGame.description1'), t('Project.ShootingGame.description2')],
       links: [
         {
           text: 'Github',
@@ -80,7 +78,7 @@ const ProjectPage = () => {
       imageHref: '',
       videoHref: SurvivalGame,
       title: 'Survival Game',
-      desciption: ['- It is a Survival game mobile.', '- In Progressing'],
+      desciption: [t('Project.SurvivalGame.description1'), t('Project.SurvivalGame.description2')],
       links: [
         {
           text: 'Github',
@@ -97,8 +95,8 @@ const ProjectPage = () => {
           <Card key={index} isFooterBlurred className="min-h-[450px] h-fit">
             <CardHeader className="z-10 flex-col items-start">
               <GradientText
-                colors={['#40ffaa', '#4079ff', '#40ffaa', '#4079ff', '#40ffaa']}
-                animationSpeed={3}
+                colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+                animationSpeed={5}
                 showBorder={false}
                 className="font-bold text-2xl mx-auto justify-center items-center"
               >
@@ -121,13 +119,13 @@ const ProjectPage = () => {
             <CardFooter className="bottom-0 z-10 flex-col items-start gap-2 h-fit">
               <div className="w-full flex flex-row justify-between">
                 <div className="w-4/5">
-                  <ul className="list-none">
+                  <ul className="list-none px-2">
                     {project?.desciption?.map((e, index) => {
                       return (
                         <li key={index}>
                           <ShinyText
                             text={e}
-                            textColor="primary"
+                            textColor="text-primary/70"
                             backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
                             speed={3}
                             className="custom-class"

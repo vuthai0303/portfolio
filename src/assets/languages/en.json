@@ -21,5 +21,67 @@
     },
     "title_desription": "Full-Stack web developer, Software engineer, and Game developer.",
     "description": "My name is Thái Duy Vũ, and I hold a Bachelor's degree in Computer Science from Ho Chi Minh City University of Technology. With two years of experience in full-stack web development, I have honed my ability to quickly learn and master new programming languages, frameworks, and libraries, regardless of the challenge. I am known for my cheerful and approachable nature, always ready to support my colleagues while maintaining a dedicated work ethic. I thrive on learning new technologies and continuously improving my skills, ensuring that I stay at the forefront of industry trends. While I tend to be more introverted and may find initiating conversations with strangers challenging, this trait allows me to focus deeply on my work and deliver meticulous results. I am confident that my technical expertise, proactive attitude, and commitment to excellence will make me a valuable asset to any team."
+  },
+  "Project": {
+    "GiupViec": {
+      "description1": "- It is a system that assists in finding and connecting domestic helpers with clients"
+    },
+    "ChessGame": {
+      "description1": "- It is a Chess game",
+      "description2": "- Play with AI",
+      "description3": "- Use Unity's Data-Oriented Technology Stack (DOTS)"
+    },
+    "shootTank": {
+      "description1": "- It is a game project improved from tutorial"
+    },
+    "ShootingGame": {
+      "description1": "- It is a Shoot’em up gam",
+      "description2": "- Use Unity's Data-Oriented Technology Stack (DOTS)"
+    },
+    "SurvivalGame": {
+      "description1": "- It is a Survival game mobile.",
+      "description2": "- In Progressing"
+    }
+  },
+  "Experience": {
+    "systemEXE": {
+      "title": "SystemEXE Vietnam",
+      "description": "Full stack developer at SystemEXE Vietnam. Responsible for developing and upgrading client projects.",
+      "heatmap": {
+        "title": "Heatmap",
+        "description": "IOT project that displays temperature, humidity, and pressure of the office."
+      },
+      "GCS": {
+        "title": "GCS",
+        "description": "Project for managing real estate contracts."
+      },
+      "Fluzo": {
+        "title": "Fluzo",
+        "description": "Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business."
+      },
+      "CIIC": {
+        "title": "CIIC",
+        "description": "Project supporting document management."
+      },
+      "RMS": {
+        "title": "RMS",
+        "description": " Project supporting personnel management."
+      }
+    },
+    "topebox": {
+      "title": "TOPEBOX",
+      "subTitle": "Intern Game Developer",
+      "description": "Game development intern at TOPEBOX. Guided in game programming using the new Unity's Data-Oriented Technology Stack (DOTS)."
+    },
+    "fujinet": {
+      "title": "Fujinet Systems JSC",
+      "subTitle": "Full Stack Developer",
+      "description": "Full stack developer at Fujinet Systems JSC. Responsible for developing and fixing the MDware system (MDware fully covers all functions of the item master system, ordering system (automatic), sales management system, and so on). The project is developed using Java and the Struts framework."
+    },
+    "education": {
+      "title": "HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY",
+      "subTitle": "Faculty of Computer Science and Engineering",
+      "description": "GPA: 7.2/10 (Computer Science)"
+    }
   }
 }

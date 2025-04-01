@@ -1,18 +1,21 @@
 import { Card, CardBody } from '@heroui/react'
-import { BriefcaseBusiness, School } from 'lucide-react'
+import { Briefcase, BriefcaseBusiness, School } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import TimeLine from '../../components/ui/TimeLine'
 
 const ExperiencePage = () => {
+  const { t } = useTranslation()
+
   const timeline = [
     {
-      title: 'SystemEXE ViệtNam',
+      title: t('Experience.systemEXE.title'),
       subTitle: 'Full Stack Developer',
-      description: `Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án của khách hàng.`,
+      description: t('Experience.systemEXE.description'),
       tasks: {
         Heatmap: [
           {
-            title: 'Heatmap',
-            description: 'Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng.',
+            title: t('Experience.systemEXE.heatmap.title'),
+            description: t('Experience.systemEXE.heatmap.description'),
             time: '2025/01 - Now',
             frontend: ['HTML', 'CSS', 'Typescript', 'Vite', 'React'],
             backend: [
@@ -29,8 +32,8 @@ const ExperiencePage = () => {
         ],
         GCS: [
           {
-            title: 'GCS',
-            description: 'Dự án quản lý hợp đồng mua bán bất động sản.',
+            title: t('Experience.systemEXE.GCS.title'),
+            description: t('Experience.systemEXE.GCS.description'),
             time: '2024/06 - 2025/03',
             frontend: ['HTML', 'CSS', 'Javascript', 'Vue'],
             backend: ['Java', 'Spring Boot', 'Oracle'],
@@ -39,9 +42,8 @@ const ExperiencePage = () => {
         ],
         Fluzo: [
           {
-            title: 'Fluzo',
-            description:
-              'Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business.',
+            title: t('Experience.systemEXE.Fluzo.title'),
+            description: t('Experience.systemEXE.Fluzo.description'),
             time: '2024/02 - 2024/04',
             frontend: ['HTML', 'CSS', 'Javascript', 'Angular', 'Electron'],
             backend: ['Java', 'Spring Boot', 'Oracle'],
@@ -50,8 +52,8 @@ const ExperiencePage = () => {
         ],
         CIIC: [
           {
-            title: 'CIIC',
-            description: 'Dự án hỗ trợ quản lý đơn từ.',
+            title: t('Experience.systemEXE.CIIC.title'),
+            description: t('Experience.systemEXE.CIIC.description'),
             time: '2023/12 - 2024/02',
             frontend: ['HTML', 'CSS', 'Javascript', 'C#', 'ASP.NET'],
             backend: ['C#', 'ASP.NET', 'SQL Server'],
@@ -60,8 +62,8 @@ const ExperiencePage = () => {
         ],
         RMS: [
           {
-            title: 'Resources Management System',
-            description: 'Dự án hỗ trợ quản lý nhân sự.',
+            title: t('Experience.systemEXE.RMS.title'),
+            description: t('Experience.systemEXE.RMS.description'),
             time: '2023/10 - 2023/11',
             frontend: ['HTML', 'CSS', 'Javascript', 'Angular'],
             backend: ['Java', 'Spring Boot', 'PostgreSQL'],
@@ -73,24 +75,23 @@ const ExperiencePage = () => {
       icon: <BriefcaseBusiness />,
     },
     {
-      title: 'TOPEBOX',
+      title: t('Experience.topebox.title'),
       subTitle: 'Intern Game Developer',
-      description: `Thực tập sinh lập trình game tại TOPEBOX. Được hướng dẫn lập trình game với công nghệ mới Unity's Data-Oriented Technology Stack (DOTS).`,
+      description: t('Experience.topebox.description'),
       date: '2023/06 - 2023/07',
-      icon: <BriefcaseBusiness />,
+      icon: <Briefcase />,
     },
     {
-      title: 'Fujinet Systems JSC',
+      title: t('Experience.fujinet.title'),
       subTitle: 'Full Stack Developer',
-      description:
-        'Lập trình viên full stack tại Fujinet Systems JSC. Thực hiện phát triển, sửa chửa hệ thống MDware (MDware fully covers all function of item master system, ordering system(automatic), sales management system and so on) Dự án được phát triển bằng ngôn ngữ Java và Struts framework',
+      description: t('Experience.fujinet.description'),
       date: '2022/07 - 2023/04',
       icon: <BriefcaseBusiness />,
     },
     {
-      title: 'Đại học Bách Khoa TP HCM',
-      subTitle: 'Khoa Khoa học và kỹ thuật máy tính',
-      description: 'GPA: 7.2/10 (Khoa học máy tính)',
+      title: t('Experience.education.title'),
+      subTitle: t('Experience.education.subTitle'),
+      description: t('Experience.education.description'),
       date: '2018/09 - 2023/11',
       icon: <School />,
     },

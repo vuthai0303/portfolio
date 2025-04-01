@@ -20,5 +20,67 @@
     },
     "title_desription": "Nhà phát triển Web Full-Stack, phát triển phần mềm, và Game.",
     "description": "Tôi tên là Thái Duy Vũ, là cử nhân Khoa học và Máy tính của Đại học Bách Khoa TP HCM với 2 năm kinh nghiệm chuyên sâu trong lĩnh vực lập trình web fullstack. Tôi luôn tràn đầy năng lượng và thái độ tích cực trong công việc, luôn sẵn sàng học hỏi và áp dụng các công nghệ, ngôn ngữ lập trình, framework và thư viện mới một cách nhanh chóng. Nhờ tính cách vui vẻ, hòa đồng và tinh thần giúp đỡ người khác, tôi đã từng góp phần tạo nên môi trường làm việc thân thiện và hiệu quả. Mặc dù tôi có xu hướng hướng nội và không giỏi trong việc bắt chuyện với người lạ, nhưng điều này lại cho phép tôi tập trung cao độ vào công việc và luôn nỗ lực hoàn thiện bản thân qua từng dự án. Tôi tự tin rằng với sự chủ động, cầu tiến và khả năng thích nghi nhanh với những thay đổi công nghệ, tôi sẽ mang lại giá trị thiết thực cho tổ chức và đồng nghiệp."
+  },
+  "Project": {
+    "GiupViec": {
+      "description1": "- Đây là một hệ thống hỗ trợ tìm kiếm và kết nối người giúp việc với khách hàng."
+    },
+    "ChessGame": {
+      "description1": "- Đây là một trò chơi cờ.",
+      "description2": "- Có chức năng chơi với AI.",
+      "description3": "- Sử dụng công nghệ Data-Oriented Technology Stack (DOTS) của Unity."
+    },
+    "shootTank": {
+      "description1": "- Đây là một dự án trò chơi được cải thiện từ hướng dẫn."
+    },
+    "ShootingGame": {
+      "description1": "- Đây là một trò chơi Shoot’em up.",
+      "description2": "- Sử dụng công nghệ Data-Oriented Technology Stack (DOTS) của Unity."
+    },
+    "SurvivalGame": {
+      "description1": "- Đây là một trò chơi sinh tồn trên di động.",
+      "description2": "- Đang trong quá trình phát triển."
+    }
+  },
+  "Experience": {
+    "systemEXE": {
+      "title": "SystemEXE ViệtNam",
+      "description": "Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án của khách hàng.",
+      "heatmap": {
+        "title": "Heatmap",
+        "description": "Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng."
+      },
+      "GCS": {
+        "title": "GCS",
+        "description": "Dự án quản lý hợp đồng mua bán bất động sản."
+      },
+      "Fluzo": {
+        "title": "Fluzo",
+        "description": "Fluzo là một hệ thống nhằm làm cho việc xin cấp phép bản quyền trở nên hiệu quả và cải thiện độ chính xác của nó trong lĩnh vực phân phối nội dung kỹ thuật số."
+      },
+      "CIIC": {
+        "title": "CIIC",
+        "description": "Dự án hỗ trợ quản lý đơn từ."
+      },
+      "RMS": {
+        "title": "RMS",
+        "description": "Dự án hỗ trợ quản lý nhân sự."
+      }
+    },
+    "topebox": {
+      "title": "TOPEBOX",
+      "subTitle": "Intern Game Developer",
+      "description": "Thực tập sinh lập trình game tại TOPEBOX. Được hướng dẫn lập trình game với công nghệ mới Unity's Data-Oriented Technology Stack (DOTS)."
+    },
+    "fujinet": {
+      "title": "Fujinet Systems JSC",
+      "subTitle": "Full Stack Developer",
+      "description": "Lập trình viên full stack tại Fujinet Systems JSC. Thực hiện phát triển, sửa chữa hệ thống MDware (MDware bao gồm tất cả các chức năng của hệ thống quản lý mặt hàng, hệ thống đặt hàng (tự động), hệ thống quản lý bán hàng và nhiều hơn nữa). Dự án được phát triển bằng ngôn ngữ Java và framework Struts."
+    },
+    "educetion": {
+      "title": "Đại học Bách Khoa TP HCM",
+      "subTitle": "Khoa Khoa học và kỹ thuật máy tính",
+      "description": "GPA: 7.2/10 (Khoa học máy tính)"
+    }
   }
 }
