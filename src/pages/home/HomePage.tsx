@@ -1,5 +1,5 @@
 import { Avatar, Button, Card, CardBody, Divider, Link } from '@heroui/react'
-import { Facebook, Github, Instagram, Mail } from 'lucide-react'
+import { Facebook, Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import RotatingSphere from '../../components/ui/RotatingSphere'
@@ -59,6 +59,11 @@ const HomePage: React.FC = () => {
                         <Link isExternal href="https://github.com/vuthai0303">
                           <Button isIconOnly aria-label="Github" color="primary" variant="light">
                             <Github />
+                          </Button>
+                        </Link>
+                        <Link isExternal href="https://www.linkedin.com/in/vuthai1503/">
+                          <Button isIconOnly aria-label="Linkedin" color="primary" variant="light">
+                            <Linkedin />
                           </Button>
                         </Link>
                         <Link isExternal href="mailto:vuthai15032k@gmail.com">
