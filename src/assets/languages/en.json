@@ -20,7 +20,7 @@
       "title_4": "I'm a software engineer."
     },
     "title_desription": "Full-Stack web developer, Software engineer, and Game developer.",
-    "description": "My name is Thái Duy Vũ, and I hold a Bachelor's degree in Computer Science from Ho Chi Minh City University of Technology. With two years of experience in full-stack web development, I have honed my ability to quickly learn and master new programming languages, frameworks, and libraries, regardless of the challenge. I am known for my cheerful and approachable nature, always ready to support my colleagues while maintaining a dedicated work ethic. I thrive on learning new technologies and continuously improving my skills, ensuring that I stay at the forefront of industry trends. While I tend to be more introverted and may find initiating conversations with strangers challenging, this trait allows me to focus deeply on my work and deliver meticulous results. I am confident that my technical expertise, proactive attitude, and commitment to excellence will make me a valuable asset to any team."
+    "description": "My name is Thái Duy Vũ, and a Computer Science Engineer from Ho Chi Minh City University of Technology with over two years of comprehensive experience in fullstack web development. Possessing a strong positive attitude and high energy, I am adept at rapidly learning and effectively applying new technologies, programming languages, frameworks, and libraries. Known for being a collaborative and supportive team member, contributing to a positive and productive work environment. While naturally focused and detail-oriented, which enhances my ability to concentrate deeply on tasks, I am deeply committed to continuous self-improvement through challenging projects. I am confident that my proactive approach, eagerness for growth, and adaptability to technological advancements will enable me to deliver significant value to your organization and team."
   },
   "Project": {
     "GiupViec": {
@@ -61,7 +61,7 @@
       },
       "CIIC": {
         "title": "CIIC",
-        "description": "Project supporting document management."
+        "description": "Project to support application management."
       },
       "RMS": {
         "title": "RMS",

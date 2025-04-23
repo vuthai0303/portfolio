@@ -53,7 +53,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
               className="text-base font-normal"
             />
           )}
-          {task?.other && (
+          {task?.other?.length > 0 && (
             <ShinyText
               text={'Test: ' + task.other.join(', ')}
               textColor="text-primary/80"
