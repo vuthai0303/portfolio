@@ -1,11 +1,12 @@
 import {
+  Checkbox,
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle,
+  NavbarMenuToggle
 } from '@heroui/react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -20,6 +21,7 @@ const NavBar = () => {
   const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isOpenSplashCursor, setIsOpenSplashCursor] = useState(true)
 
   const navBarItems = [
     {
@@ -34,11 +36,15 @@ const NavBar = () => {
       to: '/experience',
       title: t('NavBar.experience'),
     },
+    {
+      to: '/tools',
+      title: t('NavBar.tools'),
+    },
   ]
 
   return (
     <>
-      <SplashCursor />
+      {isOpenSplashCursor && <SplashCursor />}
       <Navbar shouldHideOnScroll isBordered onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarMenuToggle
@@ -68,6 +74,11 @@ const NavBar = () => {
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
             <ThemeSwitcher />
+          </NavbarItem>
+          <NavbarItem className="hidden lg:flex">
+            <Checkbox defaultSelected color="primary" isSelected={isOpenSplashCursor} onValueChange={setIsOpenSplashCursor}>
+              {t('NavBar.cursorEffect')}
+            </Checkbox>
           </NavbarItem>
           <NavbarItem>
             <LanguageSwitcher />

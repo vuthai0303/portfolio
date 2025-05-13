@@ -1,0 +1,80 @@
+import { Card, CardFooter, CardHeader, Chip } from '@heroui/react'
+import { Braces } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
+import GradientText from '../../components/common/GradientText'
+import ShinyText from '../../components/common/ShinyText'
+import { ToolItem } from '../../types/ToolItem'
+
+const ToolsPage = () => {
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+
+  const tools: ToolItem[] = [
+    {
+      id: 'json-formatter',
+      title: 'JSON Formatter',
+      description: [t('Tools.JsonFormatter.description1') || 'Định dạng, làm đẹp và kiểm tra JSON dễ dàng.'],
+      icon: <Braces size={32} />,
+      route: '/tools/json-formatter',
+      tags: ['JSON', 'Formatter', 'Developer'],
+    },
+    // Thêm tool khác ở đây
+  ]
+
+  return (
+    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-20 py-5 pt-10 min-h-screen">
+      {tools.map((tool) => (
+        <Card
+            key={tool.id}
+            isFooterBlurred
+            isPressable 
+            className="min-w-[200px] w-fit h-fit cursor-pointer hover:scale-105 transition"
+            onPress={() => navigate(tool.route)}
+        >
+          <CardHeader className="z-10 flex-col items-center">
+            <div className="mb-2 text-primary">{tool.icon}</div>
+            <GradientText
+                colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+                animationSpeed={5}
+                showBorder={false}
+                className="font-bold text-2xl mx-auto justify-center items-center"
+                >
+                {tool.title}
+            </GradientText>
+          </CardHeader>
+          <CardFooter className="bottom-0 z-10 flex-col items-center gap-2 h-fit">
+            <ul className="list-none px-2">
+              {tool.description.map((desc, idx) => (
+                <ShinyText
+                    key={idx}
+                    text={desc}
+                    textColor="text-primary/70"
+                    backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
+                    speed={3}
+                    className="custom-class"
+                />
+              ))}
+            </ul>
+            <div className="flex flex-row gap-1 text-tiny flex-wrap">
+              {tool.tags?.map((tag, idx) => (
+                <Chip
+                  key={idx}
+                  color="primary"
+                  variant="shadow"
+                  classNames={{
+                    content: 'text-tiny',
+                  }}
+                >
+                  {tag}
+                </Chip>
+              ))}
+            </div>
+          </CardFooter>
+        </Card>
+      ))}
+    </div>
+  )
+}
+
+export default ToolsPage

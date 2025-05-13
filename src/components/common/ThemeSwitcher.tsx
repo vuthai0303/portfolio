@@ -58,7 +58,7 @@ export default function ThemeSwitcher() {
     <Switch
       defaultSelected
       color="secondary"
-      size="lg"
+      size="md"
       thumbIcon={({ isSelected, className }) =>
         isSelected ? <SunIcon className={className} /> : <MoonIcon className={className} />
       }
