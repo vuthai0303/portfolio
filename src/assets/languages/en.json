@@ -51,23 +51,27 @@
       "title": "SystemEXE Vietnam",
       "description": "Full stack developer at SystemEXE Vietnam. Responsible for developing and upgrading client projects.",
       "heatmap": {
-        "title": "Heatmap",
+        "title": "Heatmap - Monitoring System",
         "description": "IOT project that displays temperature, humidity, and pressure of the office."
       },
+      "Mars": {
+        "title": "Mars - Accounting Management System",
+        "description": "The accounting management system supports businesses in recording, managing documents and ledgers, and generating financial reports efficiently, ensuring transparency and regulatory compliance."
+      },
       "GCS": {
-        "title": "GCS",
+        "title": "GCS - Contract Management System",
         "description": "Project for managing real estate contracts."
       },
       "Fluzo": {
-        "title": "Fluzo",
+        "title": "Fluzo - Music Copyright Management System",
         "description": "Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business."
       },
       "CIIC": {
-        "title": "CIIC",
+        "title": "CIIC - Application Management System",
         "description": "Project to support application management."
       },
       "RMS": {
-        "title": "RMS",
+        "title": "RMS - Resource Management System",
         "description": " Project supporting personnel management."
       }
     },

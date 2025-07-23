@@ -30,13 +30,23 @@ const ExperiencePage = () => {
             other: [],
           },
         ],
+        Mars: [
+          {
+            title: t('Experience.systemEXE.Mars.title'),
+            description: t('Experience.systemEXE.Mars.description'),
+            time: '2025/04 - 2025/07',
+            frontend: ['HTML', 'CSS', 'Javascript', 'C#'],
+            backend: ['C#', '.NET Framework 4.8', 'OracleDB'],
+            other: ['Nunit', 'bat'],
+          },
+        ],
         GCS: [
           {
             title: t('Experience.systemEXE.GCS.title'),
             description: t('Experience.systemEXE.GCS.description'),
             time: '2024/06 - 2025/03',
             frontend: ['HTML', 'CSS', 'Javascript', 'Vue', 'Tailwind CSS'],
-            backend: ['Java', 'Spring Boot', 'Oracle'],
+            backend: ['Java', 'Spring Boot', 'OracleDB'],
             other: ['Groovy', 'Mockito'],
           },
         ],
@@ -46,7 +56,7 @@ const ExperiencePage = () => {
             description: t('Experience.systemEXE.Fluzo.description'),
             time: '2024/03 - 2024/05',
             frontend: ['HTML', 'CSS', 'Typescript', 'Angular', 'Electron'],
-            backend: ['Java', 'Spring Boot', 'Oracle'],
+            backend: ['Java', 'Spring Boot', 'OracleDB'],
             other: ['JUnit', 'Mockito'],
           },
         ],

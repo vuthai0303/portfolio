@@ -47,11 +47,15 @@
   },
   "Experience": {
     "systemEXE": {
-      "title": "SystemEXE ViệtNam",
+      "title": "SystemEXE Việt Nam",
       "description": "Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án của khách hàng.",
       "heatmap": {
         "title": "Heatmap",
         "description": "Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng."
+      },
+      "Mars": {
+        "title": "Mars",
+        "description": "Hệ thống quản lý kế toán hỗ trợ doanh nghiệp ghi chép, quản lý chứng từ, sổ cái và lập báo cáo tài chính hiệu quả, đảm bảo tính minh bạch và tuân thủ quy định."
       },
       "GCS": {
         "title": "GCS",
@@ -81,7 +85,7 @@
       "description": "Lập trình viên full stack tại Fujinet Systems JSC. Thực hiện phát triển, sửa chữa hệ thống MDware (MDware bao gồm tất cả các chức năng của hệ thống quản lý mặt hàng, hệ thống đặt hàng (tự động), hệ thống quản lý bán hàng và nhiều hơn nữa). Dự án được phát triển bằng ngôn ngữ Java và framework Struts."
     },
     "educetion": {
-      "title": "Đại học Bách Khoa TP HCM",
+      "title": "Đại học Bách Khoa Thành Phố Hồ Chí Minh",
       "subTitle": "Khoa Khoa học và kỹ thuật máy tính",
       "description": "GPA: 7.2/10 (Khoa học máy tính)"
     }
