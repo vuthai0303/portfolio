@@ -6,7 +6,7 @@ import {
   NavbarItem,
   NavbarMenu,
   NavbarMenuItem,
-  NavbarMenuToggle
+  NavbarMenuToggle,
 } from '@heroui/react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -21,7 +21,7 @@ const NavBar = () => {
   const { t } = useTranslation()
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isOpenSplashCursor, setIsOpenSplashCursor] = useState(true)
+  const [isOpenSplashCursor, setIsOpenSplashCursor] = useState(false)
 
   const navBarItems = [
     {
@@ -76,7 +76,12 @@ const NavBar = () => {
             <ThemeSwitcher />
           </NavbarItem>
           <NavbarItem className="hidden lg:flex">
-            <Checkbox defaultSelected color="primary" isSelected={isOpenSplashCursor} onValueChange={setIsOpenSplashCursor}>
+            <Checkbox
+              defaultSelected
+              color="primary"
+              isSelected={isOpenSplashCursor}
+              onValueChange={setIsOpenSplashCursor}
+            >
               {t('NavBar.cursorEffect')}
             </Checkbox>
           </NavbarItem>

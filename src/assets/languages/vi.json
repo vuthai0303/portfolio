@@ -25,6 +25,9 @@
     "description": "Tôi tên là Thái Duy Vũ, và là kỹ sư Khoa học Máy tính tốt nghiệp từ Đại học Bách Khoa TP. Hồ Chí Minh với hơn hai năm kinh nghiệm toàn diện trong lĩnh vực phát triển web fullstack. Sở hữu thái độ tích cực và nguồn năng lượng dồi dào, tôi thành thạo trong việc nhanh chóng học hỏi và áp dụng hiệu quả các công nghệ, ngôn ngữ lập trình, framework và thư viện mới. Tôi được biết đến là một thành viên nhóm có tinh thần hợp tác và hỗ trợ đồng nghiệp, góp phần xây dựng một môi trường làm việc tích cực và hiệu quả. Tuy có thiên hướng tập trung cao độ và chú trọng chi tiết một cách tự nhiên, điều này giúp nâng cao khả năng tập trung sâu vào công việc, tôi luôn cam kết sâu sắc vào việc không ngừng hoàn thiện bản thân thông qua các dự án thử thách. Tôi tự tin rằng sự chủ động, tinh thần cầu tiến và khả năng thích ứng với những tiến bộ công nghệ của mình sẽ cho phép tôi mang lại giá trị đáng kể cho tổ chức và đội ngũ của quý vị."
   },
   "Project": {
+    "StudyLanguage": {
+      "description1": "- Website hỗ trợ học các kỹ năng năng tiếng anh với sự hỗ trợ của AI."
+    },
     "GiupViec": {
       "description1": "- Đây là một hệ thống hỗ trợ tìm kiếm và kết nối người giúp việc với khách hàng."
     },
@@ -54,15 +57,15 @@
         "description": "Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng."
       },
       "Mars": {
-        "title": "Mars",
+        "title": "Mars - Hệ thống quản lý nghiệp vụ kế toán",
         "description": "Hệ thống quản lý kế toán hỗ trợ doanh nghiệp ghi chép, quản lý chứng từ, sổ cái và lập báo cáo tài chính hiệu quả, đảm bảo tính minh bạch và tuân thủ quy định."
       },
       "GCS": {
-        "title": "GCS",
-        "description": "Dự án quản lý hợp đồng mua bán bất động sản."
+        "title": "GCS - Hệ thống Quản lý Hợp đồng",
+        "description": "Hệ thống là một giải pháp kỹ thuật số toàn diện được thiết kế để tối ưu hóa việc quản lý bất động sản và giao dịch bất động sản thông qua công nghệ tiên tiến. Được thiết kế để hỗ trợ nhiều bên liên quan — bao gồm đại lý, người mua, người bán và quản trị viên — nền tảng này cho phép quản lý liền mạch danh mục bất động sản, tương tác với khách hàng và quy trình làm việc hợp đồng."
       },
       "Fluzo": {
-        "title": "Fluzo",
+        "title": "Fluzo - Hệ thống quản lý bản quyền âm nhạc",
         "description": "Fluzo là một hệ thống nhằm làm cho việc xin cấp phép bản quyền trở nên hiệu quả và cải thiện độ chính xác của nó trong lĩnh vực phân phối nội dung kỹ thuật số."
       },
       "CIIC": {
@@ -70,8 +73,8 @@
         "description": "Dự án hỗ trợ quản lý đơn từ."
       },
       "RMS": {
-        "title": "RMS",
-        "description": "Dự án hỗ trợ quản lý nhân sự."
+        "title": "RMS - Hệ thống quản lý nhân sự",
+        "description": "Hệ thống toàn diện được thiết kế để tối ưu hóa việc phân bổ và sử dụng các nguồn lực của công ty, bao gồm nhân sự, thiết bị, thời gian và tài sản tài chính."
       }
     },
     "topebox": {

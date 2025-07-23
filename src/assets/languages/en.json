@@ -26,6 +26,9 @@
     "description": "My name is Thái Duy Vũ, and a Computer Science Engineer from Ho Chi Minh City University of Technology with over two years of comprehensive experience in fullstack web development. Possessing a strong positive attitude and high energy, I am adept at rapidly learning and effectively applying new technologies, programming languages, frameworks, and libraries. Known for being a collaborative and supportive team member, contributing to a positive and productive work environment. While naturally focused and detail-oriented, which enhances my ability to concentrate deeply on tasks, I am deeply committed to continuous self-improvement through challenging projects. I am confident that my proactive approach, eagerness for growth, and adaptability to technological advancements will enable me to deliver significant value to your organization and team."
   },
   "Project": {
+    "StudyLanguage": {
+      "description1": "- Website supports learning English skills with the support of AI."
+    },
     "GiupViec": {
       "description1": "- It is a system that assists in finding and connecting domestic helpers with clients"
     },
@@ -60,7 +63,7 @@
       },
       "GCS": {
         "title": "GCS - Contract Management System",
-        "description": "Project for managing real estate contracts."
+        "description": "Contract Management System is a comprehensive digital solution tailored to optimize property management and real estate transactions through advanced technology. Designed to support multiple stakeholders — including agents, buyers, sellers, and administrators — the platform enables seamless management of property portfolios, customer interactions, and contract workflow"
       },
       "Fluzo": {
         "title": "Fluzo - Music Copyright Management System",
@@ -72,7 +75,7 @@
       },
       "RMS": {
         "title": "RMS - Resource Management System",
-        "description": " Project supporting personnel management."
+        "description": " Resource Management System: comprehensive system designed to optimize the allocation and utilization of a company's resources, including personnel, equipment, time, and financial assets."
       }
     },
     "topebox": {

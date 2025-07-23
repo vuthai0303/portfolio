@@ -1,6 +1,7 @@
 import { Button, Card, CardFooter, CardHeader, Chip, Image, Link } from '@heroui/react'
-import { Github, HardDrive } from 'lucide-react'
+import { Github, Globe, HardDrive } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import StudyLanguage from '../../assets/images/study-language.png'
 import ChessGame from '../../assets/videos/projects/ChessGame.mp4'
 import GiupViec from '../../assets/videos/projects/GiupViec.mp4'
 import ShootingGame from '../../assets/videos/projects/ShootingGame.mp4'
@@ -14,6 +15,23 @@ const ProjectPage = () => {
   const { t } = useTranslation()
 
   const projects: ProjectItem[] = [
+    {
+      imageHref: StudyLanguage,
+      videoHref: '',
+      title: 'Study Language Website',
+      desciption: [t('Project.StudyLanguage.description1')],
+      links: [
+        {
+          text: 'Github',
+          href: 'https://github.com/vuthai0303/study-language',
+        },
+        {
+          text: 'Website',
+          href: 'https://study-language-snowy.vercel.app/',
+        },
+      ],
+      tags: ['React', 'Next.JS', 'Tailwind CSS', 'AI'],
+    },
     {
       imageHref: '',
       videoHref: GiupViec,
@@ -107,8 +125,8 @@ const ProjectPage = () => {
               <Image
                 removeWrapper
                 alt="Card example background"
-                className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
-                src={project.videoHref}
+                className="z-0 w-full h-full object-cover rounded-none"
+                src={project.imageHref}
               />
             ) : (
               <video className="w-full h-full object-cover" autoPlay loop muted>
@@ -146,7 +164,13 @@ const ProjectPage = () => {
                           color="primary"
                           variant="light"
                         >
-                          {link.text == 'Github' ? <Github /> : <HardDrive />}
+                          {link.text == 'Github' ? (
+                            <Github />
+                          ) : link.text == 'Website' ? (
+                            <Globe />
+                          ) : (
+                            <HardDrive />
+                          )}
                         </Button>
                       </Link>
                     )
