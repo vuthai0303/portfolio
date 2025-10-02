@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className="flex justify-center items-start">
-        <Card className="min-w-[600px] w-2/3 h-full rounded-b-lg bg-background" radius="none">
+        <Card className="min-w-[600px] w-full h-full rounded-2xl bg-background/90" radius="none">
           <CardBody className="p-10">
             <div className="flex flex-row px-10">
               {/* title is here */}

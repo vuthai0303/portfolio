@@ -24,7 +24,7 @@ export default function GradientText({
 
   return (
     <div
-      className={`relative flex max-w-fit flex-row rounded-[1.25rem] font-medium backdrop-blur transition-shadow duration-500 overflow-hidden cursor-pointer ${className}`}
+      className={`relative flex max-w-fit flex-row rounded-[1.25rem] font-medium transition-shadow duration-500 overflow-hidden cursor-pointer px-2 -translate-x-2 ${className}`}
       style={{ ...baseStyle }}
     >
       {showBorder && (

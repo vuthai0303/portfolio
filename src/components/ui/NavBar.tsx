@@ -44,59 +44,64 @@ const NavBar = () => {
 
   return (
     <>
-      {isOpenSplashCursor && <SplashCursor />}
-      <Navbar shouldHideOnScroll isBordered onMenuOpenChange={setIsMenuOpen}>
-        <NavbarContent>
-          <NavbarMenuToggle
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            className="sm:hidden"
-          />
-          <NavbarBrand>
-            <img
-              src="/portfolio/logo.png"
-              className="d-inline-block align-top size-16"
-              alt="VT logo"
+    {isOpenSplashCursor && <SplashCursor />}
+    <div className="w-full h-screen overflow-auto no-scrollbar bg-gradient-to-r from-fuchsia-500 to-indigo-600 flex justify-center">
+      <div className="w-[80%] min-w-[620px] h-fit p-3 no-scrollbar flex flex-col gap-5">
+        <Navbar
+          isBordered
+          onMenuOpenChange={setIsMenuOpen}
+          classNames={{ base: 'rounded-full top-2 min-w-[600px] bg-background/90', wrapper: 'max-w-[100%]' }}
+        >
+          <NavbarContent>
+            <NavbarMenuToggle
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              className="lg:hidden"
             />
-            <GradientText
-              colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
-              animationSpeed={5}
-              showBorder={false}
-              className="font-bold text-xl ml-2"
-              baseStyle={{ fontWeight: 700 }}
-            >
-              Vũ Thái
-            </GradientText>
-          </NavbarBrand>
-        </NavbarContent>
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
-          <NavBarItems navBarLst={navBarItems} isMenuItem={false} />
-        </NavbarContent>
-        <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <ThemeSwitcher />
-          </NavbarItem>
-          <NavbarItem className="hidden lg:flex">
-            <Checkbox
-              defaultSelected
-              color="primary"
-              isSelected={isOpenSplashCursor}
-              onValueChange={setIsOpenSplashCursor}
-            >
-              {t('NavBar.cursorEffect')}
-            </Checkbox>
-          </NavbarItem>
-          <NavbarItem>
-            <LanguageSwitcher />
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarMenu>
-          <NavBarItems navBarLst={navBarItems} isMenuItem={true} />
-        </NavbarMenu>
-      </Navbar>
-      <div className="w-full h-fit bg-gradient-to-r from-fuchsia-500 to-indigo-600">
-        <div className="relative"></div>
+            <NavbarBrand>
+              <img
+                src="/portfolio/logo.png"
+                className="d-inline-block align-top size-16"
+                alt="VT logo"
+              />
+              <GradientText
+                colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+                animationSpeed={5}
+                showBorder={false}
+                className="font-bold text-xl ml-2 "
+                baseStyle={{ fontWeight: 700 }}
+              >
+                Vũ Thái
+              </GradientText>
+            </NavbarBrand>
+          </NavbarContent>
+          <NavbarContent className="hidden lg:flex gap-4" justify="center">
+            <NavBarItems navBarLst={navBarItems} isMenuItem={false} />
+          </NavbarContent>
+          <NavbarContent justify="end">
+            <NavbarItem>
+              <Checkbox
+                defaultSelected
+                color="primary"
+                isSelected={isOpenSplashCursor}
+                onValueChange={setIsOpenSplashCursor}
+              >
+                {t('NavBar.cursorEffect')}
+              </Checkbox>
+            </NavbarItem>
+            <NavbarItem>
+              <ThemeSwitcher />
+            </NavbarItem>
+            <NavbarItem>
+              <LanguageSwitcher />
+            </NavbarItem>
+          </NavbarContent>
+          <NavbarMenu>
+            <NavBarItems navBarLst={navBarItems} isMenuItem={true} />
+          </NavbarMenu>
+        </Navbar>
         <Outlet />
       </div>
+    </div>
     </>
   )
 }

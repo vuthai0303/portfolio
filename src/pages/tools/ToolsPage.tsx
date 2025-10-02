@@ -23,13 +23,13 @@ const ToolsPage = () => {
   ]
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-20 py-5 pt-10 min-h-screen">
+    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-2 pt-2">
       {tools.map((tool) => (
         <Card
             key={tool.id}
             isFooterBlurred
             isPressable 
-            className="min-w-[200px] w-fit h-fit cursor-pointer hover:scale-105 transition"
+            className="h-fit cursor-pointer hover:scale-105 transition bg-background/90"
             onPress={() => navigate(tool.route)}
         >
           <CardHeader className="z-10 flex-col items-center">

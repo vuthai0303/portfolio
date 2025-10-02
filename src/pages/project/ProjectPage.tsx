@@ -107,10 +107,10 @@ const ProjectPage = () => {
     },
   ]
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-20 py-5 pt-10">
+    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-2 pt-2">
       {projects?.map((project, index) => {
         return (
-          <Card key={index} isFooterBlurred className="min-h-[450px] h-fit">
+          <Card key={index} isFooterBlurred className="h-fit bg-background/90">
             <CardHeader className="z-10 flex-col items-start">
               <GradientText
                 colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}

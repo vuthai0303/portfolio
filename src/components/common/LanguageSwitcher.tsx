@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { switchLanguage } from '../../store/slices/languageSlice'
 import { RootStateType } from '../../types/SliceTypes'
+import { Select, SelectItem } from '@heroui/react'
+import { EarthIcon } from 'lucide-react'
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation()
@@ -11,12 +13,12 @@ const LanguageSwitcher = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const changeLanguage = async () => {
+    const changeLanguageI18 = async () => {
       await i18n.loadLanguages(curLanguage) // Tải file ngôn ngữ
       i18n.changeLanguage(curLanguage)
     }
 
-    changeLanguage()
+    changeLanguageI18()
   }, [curLanguage, i18n])
 
   const changeLanguage = (lng: string) => {
@@ -25,14 +27,20 @@ const LanguageSwitcher = () => {
 
   return (
     <div>
-      <select
-        className="pr-1"
-        value={i18n.language}
+      <Select
+        className="pr-1 w-[150px]"
+        defaultSelectedKeys={[curLanguage]}
+        selectedKeys={[curLanguage]}
+        selectionMode='single'
+        label=""
+        endContent={<EarthIcon />}
+        variant='flat'
+        color='primary'
         onChange={(e) => changeLanguage(e.target.value)}
       >
-        <option value="en">English</option>
-        <option value="vi">Tiếng Việt</option>
-      </select>
+        <SelectItem key="en">English</SelectItem>
+        <SelectItem key="vi">Tiếng Việt</SelectItem>
+      </Select>
     </div>
   )
 }
