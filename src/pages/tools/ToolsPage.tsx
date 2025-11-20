@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import GradientText from '../../components/common/GradientText'
 import ShinyText from '../../components/common/ShinyText'
 import { ToolItem } from '../../types/ToolItem'
+import SnakesGame from '../../components/snakes-game/SnakesGame'
 
 const ToolsPage = () => {
   const { t } = useTranslation()
@@ -73,6 +74,9 @@ const ToolsPage = () => {
           </CardFooter>
         </Card>
       ))}
+      <div className='w-full h-[300px]'>
+        <SnakesGame />
+      </div>
     </div>
   )
 }
