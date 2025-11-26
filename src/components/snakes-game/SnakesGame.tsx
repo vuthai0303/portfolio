@@ -1,17 +1,16 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Button } from '@heroui/react';
+import { PlayCircle } from 'lucide-react';
+import { Vec2 } from 'ogl';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 interface SnakesGameProps {
 
 }
 
-interface Vector {
-  x: number;
-  y: number;
-}
-
 interface Square {
-  position: Vector;
-  direction: Vector;
+  position: Vec2;
+  direction: Vec2;
+  preDirection: Vec2 | null;
   size: number;
 }
 
@@ -21,25 +20,26 @@ interface SnakeInfor {
 }
 
 const SIZE = 30 // 30px
-const DEFAULT_VECTOR : Vector = { x:0, y:0 }
-
-const DIRECTION_RIGHT : Vector = { x:1, y:0 } // left to right
-const DIRECTION_LEFT : Vector = { x:-1, y:0 } // right to left
-const DIRECTION_UP : Vector = { x:0, y:1 } // down to up
-const DIRECTION_DOWN : Vector = { x:0, y:-1 } // up to down
+const DEFAULT_VECTOR : Vec2 = new Vec2(0,0);
+const DIRECTION_RIGHT : Vec2 = new Vec2(1,0) // left to right
+const DIRECTION_LEFT : Vec2 = new Vec2(-1,0) // right to left
+const DIRECTION_UP : Vec2 = new Vec2(0,-1) // down to up
+const DIRECTION_DOWN : Vec2 = new Vec2(0,1) // up to down
 
 const MIN_SIZE = { width: 300, height: 150 }
 
 const SnakesGame: React.FC<SnakesGameProps> = () => {
 
   const defaultSnakeInfor : SnakeInfor = {
-    head: {position: { x:2, y:0 }, direction:DIRECTION_RIGHT, size: SIZE * 0.9}, 
-    tail: [{position: { x:1, y:0 }, direction:DIRECTION_RIGHT, size: SIZE * 0.7}, {position: { x:0, y:0 }, direction:DIRECTION_RIGHT, size: SIZE * 0.7}]
+    head: {position: new Vec2(2,0), direction:DIRECTION_RIGHT.clone(), preDirection:DIRECTION_RIGHT.clone(), size: SIZE * 0.9}, 
+    tail: [{position: new Vec2(1,0), direction:DIRECTION_RIGHT.clone(), preDirection:DIRECTION_RIGHT.clone(), size: SIZE * 0.7}, {position: DEFAULT_VECTOR.clone(), direction:DIRECTION_RIGHT.clone(), preDirection:null, size: SIZE * 0.7}]
   };
 
   const boardRef = useRef<HTMLDivElement>(null);
   const [boardSize, setBoardSize] = useState({width: 0, height: 0})
   const [snake, setSnake] = useState<SnakeInfor>(defaultSnakeInfor);
+  const [direction, setDirection] = useState<Vec2>(DIRECTION_RIGHT.clone());
+  const [time, setTime] = useState<number>(0);
 
   const [isPlay, setIsPlay] = useState<boolean>(false);
 
@@ -49,31 +49,137 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
     bSize.width = Math.floor(bSize.width / SIZE) * SIZE;
     bSize.height = Math.floor(bSize.height / SIZE) * SIZE;
     setBoardSize(bSize);
-
-    const loopGame = () => {
-      if (!isPlay) return;
-
-
-    }
-
-    const startGame = setInterval(loopGame, 1000);
-
-    return clearInterval(startGame)
   }, [])
 
   useEffect(() => {
+    const loopGame = () => {
+      if (!isPlay) return;
 
-  }, [])
+      handleUpdateSnake()
+      setTime(prev => prev + 1)
+      console.log("looop " + time + " " + isPlay + " " + JSON.stringify(direction))
+    }
 
+    const startGame = setInterval(loopGame, 200);
+    return () => clearInterval(startGame)
+  }, [isPlay, direction, time])
+
+  const handleUpdateSnake = useCallback(() => {
+    if (!isPlay) return; 
+
+    let snakeUpdate = updateDirectionSnake(snake)
+    snakeUpdate = updatePositionSnake(snakeUpdate)
+
+    console.log(JSON.stringify(snakeUpdate))
+
+    setSnake(snakeUpdate)
+  }, [time])
+
+  const updateDirectionSnake = (snake: SnakeInfor) : SnakeInfor => {
+    // if (!snake || snake?.tail || snake?.head) return snake;
+
+    const preHead = snake.head
+    const preTail: Square[] = snake.tail
+    let prevDec : Vec2 | null = preHead?.direction?.clone() ?? null;
+
+    return {
+      head: {...preHead, preDirection: preHead.direction.clone(), direction: direction},
+      tail: preTail?.map((e, i) => {
+        const tempDec = prevDec?.clone()
+        prevDec = e.direction?.clone() ?? null
+        return {...e, direction: tempDec ?? DEFAULT_VECTOR.clone(), preDirection: i == preTail.length - 1 ? null : e.direction.clone()}
+      })
+    }
+  }
+
+  const updatePositionSnake = (snake: SnakeInfor) : SnakeInfor => {
+    // if (!snake || snake?.tail || snake?.head) return snake;
+
+    const preHead = snake.head
+    const preTail: Square[] = snake.tail
+
+    preHead?.position?.add(preHead?.direction)
+    return {head: {...preHead}, tail: preTail.map((e) => {return {...e, position: e.position.add(e.direction)}})}
+
+  }
+
+  const onPlay = () => {
+    setIsPlay(true)
+  }
+
+  const onHandleSpaceKey = useCallback(() => {
+    setIsPlay(prev => !prev);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code === "Space" || event.key === " ") {
+        event.preventDefault();
+        onHandleSpaceKey();
+      } else if (event.code === "ArrowUp" || event.key === "ArrowUp") {
+        if (snake.head.direction.equals(DIRECTION_DOWN)) return;
+        event.preventDefault();
+        setDirection(DIRECTION_UP.clone());
+      } else if (event.code === "ArrowDown" || event.key === "ArrowDown") {
+        if (snake.head.direction.equals(DIRECTION_UP)) return;
+        event.preventDefault();
+        setDirection(DIRECTION_DOWN.clone());
+      } else if (event.code === "ArrowLeft" || event.key === "ArrowLeft") {
+        if (snake.head.direction.equals(DIRECTION_RIGHT)) return;
+        event.preventDefault();
+        setDirection(DIRECTION_LEFT.clone());
+      } else if (event.code === "ArrowRight" || event.key === "ArrowRight") {
+        if (snake.head.direction.equals(DIRECTION_LEFT)) return;
+        event.preventDefault();
+        setDirection(DIRECTION_RIGHT.clone());
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onHandleSpaceKey]);
+
+  const onReset = () => {
+    setSnake(defaultSnakeInfor)
+    setTime(0)
+    setDirection(DIRECTION_RIGHT.clone())
+    setIsPlay(false)
+  }
 
   return (
     <div className="w-full h-full relative" ref={boardRef}>
-      {!isPlay && (<div className='absolute z-50 bg-gray-300/60' style={{ width: boardSize.width, height: boardSize.height }}></div>)}
+      {!isPlay && (
+        <div className='absolute z-40  flex justify-center items-center' style={{ width: boardSize.width, height: boardSize.height }}>
+          <div className="flex gap-2">
+            <Button
+              className='z-50'
+              color="primary"
+              variant="solid"
+              startContent={<PlayCircle size={18} />}
+              onClick={onPlay}
+              size="sm"
+            >
+              {"Play"}
+            </Button>
+            <Button
+              className='z-50'
+              color="primary"
+              variant="solid"
+              startContent={<PlayCircle size={18} />}
+              onClick={onReset}
+              size="sm"
+            >
+              {"Reset"}
+            </Button>
+            <div className="absolute top-0 left-0 bg-gray-300 opacity-60 w-full h-full z-10"></div>
+          </div>
+        </div>
+      )}
       <div className={`bg-black/80 `}
         style={{ width: boardSize.width, height: boardSize.height }}
       >
         {snake.head && (<Square data={snake.head} />)}
-        {snake.tail && snake.tail.map(e => <Square data={e} />)}
+        {snake.tail && snake.tail.map((e,i) => <Square key={i} data={e} />)}
       </div>
     </div>
   )
