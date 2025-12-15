@@ -1,7 +1,7 @@
 import { Button } from '@heroui/react';
 import { PlayCircle } from 'lucide-react';
 import { Vec2 } from 'ogl';
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 interface SnakesGameProps {
 
@@ -20,7 +20,7 @@ interface SnakeInfor {
 }
 
 const SIZE = 30 // 30px
-const DEFAULT_VECTOR : Vec2 = new Vec2(0,0);
+const DEFAULT_VECTOR : Vec2 = new Vec2(0,0); // default vector
 const DIRECTION_RIGHT : Vec2 = new Vec2(1,0) // left to right
 const DIRECTION_LEFT : Vec2 = new Vec2(-1,0) // right to left
 const DIRECTION_UP : Vec2 = new Vec2(0,-1) // down to up
@@ -54,17 +54,17 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
   useEffect(() => {
     const loopGame = () => {
       if (!isPlay) return;
+      console.log("loop " + time + " " + isPlay + " " + JSON.stringify(direction))
 
       handleUpdateSnake()
       setTime(prev => prev + 1)
-      console.log("looop " + time + " " + isPlay + " " + JSON.stringify(direction))
     }
 
-    const startGame = setInterval(loopGame, 200);
+    const startGame = setInterval(loopGame, 300);
     return () => clearInterval(startGame)
   }, [isPlay, direction, time])
 
-  const handleUpdateSnake = useCallback(() => {
+  const handleUpdateSnake = () => {
     if (!isPlay) return; 
 
     let snakeUpdate = updateDirectionSnake(snake)
@@ -73,7 +73,7 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
     console.log(JSON.stringify(snakeUpdate))
 
     setSnake(snakeUpdate)
-  }, [time])
+  }
 
   const updateDirectionSnake = (snake: SnakeInfor) : SnakeInfor => {
     // if (!snake || snake?.tail || snake?.head) return snake;
@@ -83,24 +83,32 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
     let prevDec : Vec2 | null = preHead?.direction?.clone() ?? null;
 
     return {
-      head: {...preHead, preDirection: preHead.direction.clone(), direction: direction},
+      head: {...preHead, preDirection: preHead.direction.clone(), direction: direction.clone()},
       tail: preTail?.map((e, i) => {
-        const tempDec = prevDec?.clone()
+        const futureDec = prevDec?.clone() ?? DEFAULT_VECTOR.clone()
+        const curDirection = i == preTail.length - 1 ? null : e.direction.clone()
         prevDec = e.direction?.clone() ?? null
-        return {...e, direction: tempDec ?? DEFAULT_VECTOR.clone(), preDirection: i == preTail.length - 1 ? null : e.direction.clone()}
+        return { ...e, direction: futureDec, preDirection: curDirection }
       })
     }
   }
 
   const updatePositionSnake = (snake: SnakeInfor) : SnakeInfor => {
-    // if (!snake || snake?.tail || snake?.head) return snake;
-
     const preHead = snake.head
     const preTail: Square[] = snake.tail
 
-    preHead?.position?.add(preHead?.direction)
-    return {head: {...preHead}, tail: preTail.map((e) => {return {...e, position: e.position.add(e.direction)}})}
+    preHead.position = resetPositionOutOfBoundation(preHead.position.add(preHead?.direction).clone())
+    return { head: { ...preHead }, tail: preTail.map((e) => { return { ...e, position: resetPositionOutOfBoundation(e.position.add(e.direction).clone())}})}
+  }
 
+  // reset position if out of boundation
+  const resetPositionOutOfBoundation = (position : Vec2) => {
+    if (position.x >= (boardSize.width / SIZE)) position.x = 0
+    else if (position.x < 0) position.x = (boardSize.width / SIZE) - 1
+    if (position.y >= (boardSize.height / SIZE)) position.y = 0
+    else if (position.y < 0) position.y = (boardSize.height / SIZE) - 1
+
+    return position
   }
 
   const onPlay = () => {
@@ -111,24 +119,30 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
     setIsPlay(prev => !prev);
   }, []);
 
+  // handle move snake
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.code === "Space" || event.key === " ") {
+        // pause/resume
         event.preventDefault();
         onHandleSpaceKey();
       } else if (event.code === "ArrowUp" || event.key === "ArrowUp") {
+        // turn up
         if (snake.head.direction.equals(DIRECTION_DOWN)) return;
         event.preventDefault();
         setDirection(DIRECTION_UP.clone());
       } else if (event.code === "ArrowDown" || event.key === "ArrowDown") {
+        // turn down
         if (snake.head.direction.equals(DIRECTION_UP)) return;
         event.preventDefault();
         setDirection(DIRECTION_DOWN.clone());
       } else if (event.code === "ArrowLeft" || event.key === "ArrowLeft") {
+        // turn left
         if (snake.head.direction.equals(DIRECTION_RIGHT)) return;
         event.preventDefault();
         setDirection(DIRECTION_LEFT.clone());
       } else if (event.code === "ArrowRight" || event.key === "ArrowRight") {
+        // turn right
         if (snake.head.direction.equals(DIRECTION_LEFT)) return;
         event.preventDefault();
         setDirection(DIRECTION_RIGHT.clone());
@@ -137,8 +151,9 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onHandleSpaceKey]);
+  }, [onHandleSpaceKey, snake]);
 
+  // reset game
   const onReset = () => {
     setSnake(defaultSnakeInfor)
     setTime(0)
