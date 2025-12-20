@@ -42,6 +42,30 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
   const [time, setTime] = useState<number>(0);
 
   const [isPlay, setIsPlay] = useState<boolean>(false);
+  const [isGameOver, setIsGameOver] = useState<boolean>(false);
+
+  const [feed, setFeed] = useState<Square | null>(null)
+
+  const createFeed = () => {
+    const avaiPos = [snake.head.position, ...snake.tail.map(e => e.position)]
+    const lstPool = []
+
+    for (let i = 0; i < boardSize.width / SIZE; i++) {
+      for (let j = 0; j < boardSize.height / SIZE; j++) {
+        const point = new Vec2(i, j)
+        if (avaiPos.filter(pos => pos.equals(point)).length == 0) lstPool.push(point);
+      }
+    }
+
+    if (lstPool.length === 0) {
+      // cannot generate position
+      setIsPlay(false);
+      return null
+    }  
+
+    const idx = Math.floor(Math.random() * lstPool.length);
+    return lstPool[idx]
+  }
 
   useLayoutEffect(() => {
     const { width, height } = boardRef?.current?.getBoundingClientRect() ?? MIN_SIZE;
@@ -54,8 +78,10 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
   useEffect(() => {
     const loopGame = () => {
       if (!isPlay) return;
-      console.log("loop " + time + " " + isPlay + " " + JSON.stringify(direction))
-
+      
+      if (!feed) {
+        updateFeed()
+      }
       handleUpdateSnake()
       setTime(prev => prev + 1)
     }
@@ -70,9 +96,27 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
     let snakeUpdate = updateDirectionSnake(snake)
     snakeUpdate = updatePositionSnake(snakeUpdate)
 
-    console.log(JSON.stringify(snakeUpdate))
+    if (feed && snakeUpdate.head.position.equals(feed.position)) {
+      // handle snake eat feed
+      updateFeed()
+      const lastTail = snakeUpdate.tail[snakeUpdate.tail.length - 1]
+      const newTail = { position: lastTail.position.clone().add(lastTail.direction.clone().multiply(-1)), direction: lastTail.direction.clone(), preDirection: null, size: SIZE * 0.7 }
+      snakeUpdate.tail.push(newTail)
+    }
+
+    //handle check gameover
+    if (snakeUpdate.tail.filter(e => e.position.equals(snakeUpdate.head.position)).length > 0){
+      setIsGameOver(true)
+      setIsPlay(false)
+    }
 
     setSnake(snakeUpdate)
+  }
+
+  const updateFeed = () => {
+    const posFeed = createFeed()
+    if (posFeed) setFeed({ position: posFeed, direction: DEFAULT_VECTOR.clone(), preDirection: null, size: SIZE * 0.7 })
+    else setFeed(null)
   }
 
   const updateDirectionSnake = (snake: SnakeInfor) : SnakeInfor => {
@@ -156,36 +200,47 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
   // reset game
   const onReset = () => {
     setSnake(defaultSnakeInfor)
+    setFeed(null)
     setTime(0)
     setDirection(DIRECTION_RIGHT.clone())
-    setIsPlay(false)
+    if(isGameOver) {
+      setIsGameOver(false)
+      setIsPlay(true)
+    } else {
+      setIsPlay(false)
+    }
   }
 
   return (
     <div className="w-full h-full relative" ref={boardRef}>
       {!isPlay && (
         <div className='absolute z-40  flex justify-center items-center' style={{ width: boardSize.width, height: boardSize.height }}>
-          <div className="flex gap-2">
-            <Button
-              className='z-50'
-              color="primary"
-              variant="solid"
-              startContent={<PlayCircle size={18} />}
-              onClick={onPlay}
-              size="sm"
-            >
-              {"Play"}
-            </Button>
-            <Button
-              className='z-50'
-              color="primary"
-              variant="solid"
-              startContent={<PlayCircle size={18} />}
-              onClick={onReset}
-              size="sm"
-            >
-              {"Reset"}
-            </Button>
+          <div className="flex gap-5 flex-col justify-center items-center">
+            <div className="z-50"><p className=''>{isGameOver ? 'GameOver' : 'Pause'}</p></div>
+            <div className=" flex gap-2">
+              {!isGameOver && (
+                <Button
+                  className='z-50'
+                  color="primary"
+                  variant="solid"
+                  startContent={<PlayCircle size={18} />}
+                  onClick={onPlay}
+                  size="sm"
+                >
+                  {"Play"}
+                </Button>
+              )}
+              <Button
+                className='z-50'
+                color="primary"
+                variant="solid"
+                startContent={<PlayCircle size={18} />}
+                onClick={onReset}
+                size="sm"
+              >
+                {"Reset"}
+              </Button>
+            </div>
             <div className="absolute top-0 left-0 bg-gray-300 opacity-60 w-full h-full z-10"></div>
           </div>
         </div>
@@ -195,6 +250,7 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
       >
         {snake.head && (<Square data={snake.head} />)}
         {snake.tail && snake.tail.map((e,i) => <Square key={i} data={e} />)}
+        {feed && <Square data={feed}/>}
       </div>
     </div>
   )
