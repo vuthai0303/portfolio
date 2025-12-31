@@ -118,6 +118,26 @@
   "Tools": {
     "JsonFormatter": {
       "description1": "Định dạng, làm đẹp và kiểm tra JSON dễ dàng."
+    },
+    "TextFormatter": {
+      "description1": "Đếm từ/ký tự và định dạng văn bản nhanh chóng."
+    }
+  },
+  "TextFormatter": {
+    "title": "Công cụ định dạng văn bản",
+    "description": "Đếm số lượng từ/ký tự và chuyển đổi định dạng văn bản chỉ với một cú nhấp.",
+    "placeholder": "Nhập hoặc dán văn bản của bạn tại đây...",
+    "stats": {
+      "words": "Số từ",
+      "characters": "Số ký tự",
+      "charactersNoSpaces": "Số ký tự (không tính khoảng trống)"
+    },
+    "actions": {
+      "uppercase": "Viết hoa tất cả các ký tự",
+      "lowercase": "Viết thường tất cả các ký tự",
+      "capitalizeFirst": "Viết hoa ký tự đầu tiên",
+      "onlySpace": "Chỉ giữ lại 1 khoảng trống giữa các từ",
+      "clear": "Xóa"
     }
   }
 }

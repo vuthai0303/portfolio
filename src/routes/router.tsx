@@ -4,6 +4,7 @@ import ExperiencePage from '../pages/experience/ExperiencePage'
 import HomePage from '../pages/home/HomePage'
 import JsonFormatterPage from '../pages/json-formatter/JsonFormatterPage'
 import ProjectPage from '../pages/project/ProjectPage'
+import TextFormatterPage from '../pages/text-formatter/TextFormatterPage'
 import ToolsPage from '../pages/tools/ToolsPage'
 import { Env } from '../utils/Env'
 
@@ -20,6 +21,7 @@ const AppRouter = () => {
           <Route path="/json-formatter" element={<JsonFormatterPage />} />
           <Route path="/tools" element={<ToolsPage />} />
           <Route path="/tools/json-formatter" element={<JsonFormatterPage />} />
+          <Route path="/tools/text-formatter" element={<TextFormatterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

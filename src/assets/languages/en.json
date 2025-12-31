@@ -119,6 +119,26 @@
   "Tools": {
     "JsonFormatter": {
       "description1": "Format, beautify and validate your JSON easily."
+    },
+    "TextFormatter": {
+      "description1": "Count words/characters and format text quickly."
+    }
+  },
+  "TextFormatter": {
+    "title": "Text Formatter",
+    "description": "Count words/characters and transform text with one click.",
+    "placeholder": "Type or paste your text here...",
+    "stats": {
+      "words": "Words",
+      "characters": "Characters",
+      "charactersNoSpaces": "Characters (no spaces)"
+    },
+    "actions": {
+      "uppercase": "UPPERCASE",
+      "lowercase": "lowercase",
+      "capitalizeFirst": "Capitalize first character",
+      "onlySpace": "Only space",
+      "clear": "Clear"
     }
   }
 }

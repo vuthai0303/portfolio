@@ -1,5 +1,5 @@
 import { Card, CardFooter, CardHeader, Chip } from '@heroui/react'
-import { Braces } from 'lucide-react'
+import { Braces, Type } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import GradientText from '../../components/common/GradientText'
@@ -19,7 +19,14 @@ const ToolsPage = () => {
       route: '/tools/json-formatter',
       tags: ['JSON', 'Formatter', 'Developer'],
     },
-    // Thêm tool khác ở đây
+    {
+      id: 'text-formatter',
+      title: 'Text Formatter',
+      description: [t('Tools.TextFormatter.description1') || 'Đếm từ/ký tự và định dạng văn bản nhanh chóng.'],
+      icon: <Type size={32} />,
+      route: '/tools/text-formatter',
+      tags: ['Text', 'Formatter', 'Writer'],
+    },
   ]
 
   return (
