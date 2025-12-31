@@ -32,53 +32,55 @@ const ToolsPage = () => {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-2 pt-2">
       {tools.map((tool) => (
-        <Card
-            key={tool.id}
-            isFooterBlurred
-            isPressable 
-            className="h-fit cursor-pointer hover:scale-105 transition bg-background/90"
-            onPress={() => navigate(tool.route)}
-        >
-          <CardHeader className="z-10 flex-col items-center">
-            <div className="mb-2 text-primary">{tool.icon}</div>
-            <GradientText
-                colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
-                animationSpeed={5}
-                showBorder={false}
-                className="font-bold text-2xl mx-auto justify-center items-center"
-                >
-                {tool.title}
-            </GradientText>
-          </CardHeader>
-          <CardFooter className="bottom-0 z-10 flex-col items-center gap-2 h-fit">
-            <ul className="list-none px-2">
-              {tool.description.map((desc, idx) => (
-                <ShinyText
+        <div className="w-full h-fit relative cursor-pointer hover:scale-105 transition overflow-hidden border-highlight">
+          <Card
+              key={tool.id}
+              isFooterBlurred
+              isPressable 
+              className="w-full h-fit bg-background"
+              onPress={() => navigate(tool.route)}
+          >
+            <CardHeader className="z-10 flex-col items-center">
+              <div className="mb-2 text-primary">{tool.icon}</div>
+              <GradientText
+                  colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+                  animationSpeed={5}
+                  showBorder={false}
+                  className="font-bold text-2xl mx-auto justify-center items-center"
+                  >
+                  {tool.title}
+              </GradientText>
+            </CardHeader>
+            <CardFooter className="bottom-0 z-10 flex-col items-center gap-2 h-fit">
+              <ul className="list-none px-2">
+                {tool.description.map((desc, idx) => (
+                  <ShinyText
+                      key={idx}
+                      text={desc}
+                      textColor="text-primary/70"
+                      backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
+                      speed={3}
+                      className="custom-class"
+                  />
+                ))}
+              </ul>
+              <div className="flex flex-row gap-1 text-tiny flex-wrap">
+                {tool.tags?.map((tag, idx) => (
+                  <Chip
                     key={idx}
-                    text={desc}
-                    textColor="text-primary/70"
-                    backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
-                    speed={3}
-                    className="custom-class"
-                />
-              ))}
-            </ul>
-            <div className="flex flex-row gap-1 text-tiny flex-wrap">
-              {tool.tags?.map((tag, idx) => (
-                <Chip
-                  key={idx}
-                  color="primary"
-                  variant="shadow"
-                  classNames={{
-                    content: 'text-tiny',
-                  }}
-                >
-                  {tag}
-                </Chip>
-              ))}
-            </div>
-          </CardFooter>
-        </Card>
+                    color="primary"
+                    variant="shadow"
+                    classNames={{
+                      content: 'text-tiny',
+                    }}
+                  >
+                    {tag}
+                  </Chip>
+                ))}
+              </div>
+            </CardFooter>
+          </Card>
+        </div>
       ))}
     </div>
   )

@@ -14,3 +14,40 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+.border-highlight {
+  position: relative;
+  padding: 2px;
+  background: transparent;
+}
+
+.border-highlight::before {
+  width: 30px;
+  height: max(100cqw, 100cqh);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  content: '';
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    lime,
+    cyan,
+    dodgerblue,
+    magenta
+  );
+  animation: rotateBG 2s linear infinite;
+
+  /* padding: 2px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; */
+}
+
+@keyframes rotateBG {
+  to { transform: rotate(1turn); }
+}
