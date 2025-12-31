@@ -1,5 +1,5 @@
 import { Button } from '@heroui/react';
-import { PlayCircle } from 'lucide-react';
+import { PlayCircle, RotateCcwIcon } from 'lucide-react';
 import { Vec2 } from 'ogl';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
@@ -216,7 +216,7 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
       {!isPlay && (
         <div className='absolute z-40  flex justify-center items-center' style={{ width: boardSize.width, height: boardSize.height }}>
           <div className="flex gap-5 flex-col justify-center items-center">
-            <div className="z-50"><p className=''>{isGameOver ? 'GameOver' : 'Pause'}</p></div>
+            <div className="z-50"><p className='text-2xl md:text-3xl font-bold tracking-wide leading-none text-primary drop-shadow'>{isGameOver ? 'GameOver' : 'Pause'}</p></div>
             <div className=" flex gap-2">
               {!isGameOver && (
                 <Button
@@ -234,7 +234,7 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
                 className='z-50'
                 color="primary"
                 variant="solid"
-                startContent={<PlayCircle size={18} />}
+                startContent={<RotateCcwIcon size={18} />}
                 onClick={onReset}
                 size="sm"
               >
@@ -250,7 +250,7 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
       >
         {snake.head && (<Square data={snake.head} />)}
         {snake.tail && snake.tail.map((e,i) => <Square key={i} data={e} />)}
-        {feed && <Square data={feed}/>}
+        {feed && <Square data={feed} isFeed={true} />}
       </div>
     </div>
   )
@@ -258,9 +258,10 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
 
 interface SquareProps {
   data: Square
+  isFeed?: boolean
 }
 
-const Square: React.FC<SquareProps> = ({ data }) => {
+const Square: React.FC<SquareProps> = ({ data, isFeed = false }) => {
 
   return (
     <div className="absolute flex justify-center items-center"
@@ -269,7 +270,7 @@ const Square: React.FC<SquareProps> = ({ data }) => {
       <div className=""
         style={{ width: data.size, height: data.size}}
       >
-        <div className="w-full h-full bg-blue-400 border rounded-lg"></div>
+        <div className="w-full h-full border rounded-lg" style={{backgroundColor: isFeed ? '#67f340' : '#60a5fa'}}></div>
       </div>
     </div>
   )

@@ -56,6 +56,10 @@
         "title": "Heatmap",
         "description": "Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng."
       },
+      "Komatsu": {
+        "title": "Komatsu - Hệ thống quản trị",
+        "description": "Hệ thống web quản lý phục vụ cho các chức năng quản trị và giao diện khách hàng."
+      },
       "Mars": {
         "title": "Mars - Hệ thống quản lý nghiệp vụ kế toán",
         "description": "Hệ thống quản lý kế toán hỗ trợ doanh nghiệp ghi chép, quản lý chứng từ, sổ cái và lập báo cáo tài chính hiệu quả, đảm bảo tính minh bạch và tuân thủ quy định."

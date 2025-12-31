@@ -30,6 +30,16 @@ const ExperiencePage = () => {
             other: [],
           },
         ],
+        Komatsu: [
+          {
+            title: t('Experience.systemEXE.Komatsu.title'),
+            description: t('Experience.systemEXE.Komatsu.description'),
+            time: '2025/09 - 2025/11',
+            frontend: ['HTML', 'CSS', 'TypeScript', 'Angular', 'Azure'],
+            backend: ['Java', 'Spring boot', 'tomcat', 'docker', 'OracleDB', 'Azure'],
+            other: [],
+          },
+        ],
         Mars: [
           {
             title: t('Experience.systemEXE.Mars.title'),

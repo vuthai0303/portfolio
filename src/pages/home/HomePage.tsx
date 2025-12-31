@@ -4,6 +4,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import RotatingSphere from '../../components/ui/RotatingSphere'
 import Typewriter from '../../components/ui/Typewriter'
+import SnakesGame from '../../components/snakes-game/SnakesGame'
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation()
@@ -82,12 +83,15 @@ const HomePage: React.FC = () => {
             </div>
             <Divider className="my-4" />
             <div className="w-full overflow-hidden">
-              <div className="">
+              {/* <div className="">
                 <img
                   className="w-full"
                   src="/portfolio/github-contribution-snake/github-contribution-grid-snake.svg"
                   alt="github-contribution"
                 />
+              </div> */}
+              <div className='w-full h-[300px]'>
+                <SnakesGame />
               </div>
             </div>
           </CardBody>

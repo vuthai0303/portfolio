@@ -57,6 +57,10 @@
         "title": "Heatmap - Monitoring System",
         "description": "IOT project that displays temperature, humidity, and pressure of the office."
       },
+      "Komatsu": {
+        "title": "Komatsu - Administrator System",
+        "description": "A web-based management system that provides administrative functions and a customer interface."
+      },
       "Mars": {
         "title": "Mars - Accounting Management System",
         "description": "The accounting management system supports businesses in recording, managing documents and ledgers, and generating financial reports efficiently, ensuring transparency and regulatory compliance."

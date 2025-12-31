@@ -55,7 +55,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
           )}
           {task?.other?.length > 0 && (
             <ShinyText
-              text={'Test: ' + task.other.join(', ')}
+              text={'Other: ' + task.other.join(', ')}
               textColor="text-primary/80"
               backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
               speed={3}
