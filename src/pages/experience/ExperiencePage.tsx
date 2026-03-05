@@ -12,11 +12,21 @@ const ExperiencePage = () => {
       subTitle: 'Full Stack Developer',
       description: t('Experience.systemEXE.description'),
       tasks: {
+        CarShare: [
+          {
+            title: t('Experience.systemEXE.carshare.title'),
+            description: t('Experience.systemEXE.carshare.description'),
+            time: '2026/01 - Now',
+            frontend: ['HTML', 'CSS', 'Typescript', 'thymeleaf'],
+            backend: ['Java', 'Spring boot', 'docker', 'MySQL', 'Junit', 'Mockito'],
+            position: "Leader",
+          },
+        ],
         Heatmap: [
           {
             title: t('Experience.systemEXE.heatmap.title'),
             description: t('Experience.systemEXE.heatmap.description'),
-            time: '2025/01 - Now',
+            time: '2025/01 - 2025/12',
             frontend: ['HTML', 'CSS', 'Typescript', 'Vite', 'React', 'Tailwind CSS'],
             backend: [
               'Serverless',
@@ -27,7 +37,7 @@ const ExperiencePage = () => {
               'Amplify',
               'cognito',
             ],
-            other: [],
+            position: "Developer",
           },
         ],
         Komatsu: [
@@ -37,7 +47,7 @@ const ExperiencePage = () => {
             time: '2025/09 - 2025/11',
             frontend: ['HTML', 'CSS', 'TypeScript', 'Angular', 'Azure'],
             backend: ['Java', 'Spring boot', 'tomcat', 'docker', 'OracleDB', 'Azure'],
-            other: [],
+            position: "Developer",
           },
         ],
         Mars: [
@@ -46,8 +56,8 @@ const ExperiencePage = () => {
             description: t('Experience.systemEXE.Mars.description'),
             time: '2025/04 - 2025/07',
             frontend: ['HTML', 'CSS', 'Javascript', 'C#'],
-            backend: ['C#', '.NET Framework 4.8', 'OracleDB'],
-            other: ['Nunit', 'bat'],
+            backend: ['C#', '.NET Framework 4.8', 'OracleDB', 'Nunit', 'bat'],
+            position: "Developer",
           },
         ],
         GCS: [
@@ -56,8 +66,8 @@ const ExperiencePage = () => {
             description: t('Experience.systemEXE.GCS.description'),
             time: '2024/06 - 2025/03',
             frontend: ['HTML', 'CSS', 'Javascript', 'Vue', 'Tailwind CSS'],
-            backend: ['Java', 'Spring Boot', 'OracleDB'],
-            other: ['Groovy', 'Mockito'],
+            backend: ['Java', 'Spring Boot', 'OracleDB', 'Groovy', 'Mockito'],
+            position: "Developer",
           },
         ],
         Fluzo: [
@@ -66,8 +76,8 @@ const ExperiencePage = () => {
             description: t('Experience.systemEXE.Fluzo.description'),
             time: '2024/03 - 2024/05',
             frontend: ['HTML', 'CSS', 'Typescript', 'Angular', 'Electron'],
-            backend: ['Java', 'Spring Boot', 'OracleDB'],
-            other: ['JUnit', 'Mockito'],
+            backend: ['Java', 'Spring Boot', 'OracleDB', 'JUnit', 'Mockito'],
+            position: "Developer",
           },
         ],
         CIIC: [
@@ -77,7 +87,7 @@ const ExperiencePage = () => {
             time: '2023/12 - 2024/02',
             frontend: ['HTML', 'CSS', 'Javascript', 'C#', 'ASP.NET'],
             backend: ['C#', 'ASP.NET', 'SQL Server'],
-            other: [],
+            position: "Developer",
           },
         ],
         RMS: [
@@ -87,7 +97,7 @@ const ExperiencePage = () => {
             time: '2023/10 - 2023/11',
             frontend: ['HTML', 'CSS', 'Typescript', 'Angular'],
             backend: ['Java', 'Spring Boot', 'PostgreSQL'],
-            other: [],
+            position: "Developer",
           },
         ],
       },

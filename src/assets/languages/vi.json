@@ -52,6 +52,10 @@
     "systemEXE": {
       "title": "SystemEXE Việt Nam",
       "description": "Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án của khách hàng.",
+      "carshare": {
+        "title": "CarShare",
+        "description": "Dự án nâng cấp Spring boot 3.5 -> Spring boot 4, jackson2 -> jackson3 và cùng các thư viện liên quan."
+      },
       "heatmap": {
         "title": "Heatmap",
         "description": "Dự án IOT giúp hiển thị nhiệt độ, độ ẩm, áp suất của văn phòng."

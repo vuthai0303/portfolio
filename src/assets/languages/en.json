@@ -53,6 +53,10 @@
     "systemEXE": {
       "title": "SystemEXE Vietnam",
       "description": "Full stack developer at SystemEXE Vietnam. Responsible for developing and upgrading client projects.",
+      "carshare": {
+        "title": "CarShare",
+        "description": "This project upgrades Spring Boot 3.5 to Spring Boot 4, Jackson 2 to Jackson 3, and includes related libraries."
+      },
       "heatmap": {
         "title": "Heatmap - Monitoring System",
         "description": "IOT project that displays temperature, humidity, and pressure of the office."

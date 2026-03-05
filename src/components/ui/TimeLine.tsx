@@ -18,7 +18,7 @@ interface TimeLineProps {
         time: string
         frontend: string[]
         backend: string[]
-        other: string[]
+        position: string
       }[]
     }
   }[]

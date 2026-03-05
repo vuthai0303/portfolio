@@ -1,6 +1,7 @@
 import React from 'react'
 import GradientText from './GradientText'
 import ShinyText from './ShinyText'
+import { Chip } from '@heroui/react'
 
 interface TaskItemProps {
   task: {
@@ -9,7 +10,7 @@ interface TaskItemProps {
     description: string
     frontend: string[]
     backend: string[]
-    other: string[]
+    position: string
   }
 }
 
@@ -28,7 +29,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
       </div>
       <div className="ml-2">
         <ShinyText
-          text={task.description}
+          text={"* " + task.description}
           textColor="text-primary/80"
           backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
           speed={3}
@@ -53,14 +54,10 @@ const TaskItem: React.FC<TaskItemProps> = ({ task }) => {
               className="text-base font-normal"
             />
           )}
-          {task?.other?.length > 0 && (
-            <ShinyText
-              text={'Other: ' + task.other.join(', ')}
-              textColor="text-primary/80"
-              backgroundImage="linear-gradient(120deg, rgba(255, 0, 255, 0) 40%, rgba(255, 0, 255, 0.8) 50%, rgba(255, 0, 255, 0) 60%)"
-              speed={3}
-              className="text-base font-normal"
-            />
+          {task?.position && (
+            <Chip variant="bordered" color={task.position == "Leader" ? "success" : "primary"}>
+              {task.position}
+            </Chip>
           )}
         </div>
       </div>
