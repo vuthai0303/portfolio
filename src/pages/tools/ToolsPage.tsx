@@ -30,9 +30,9 @@ const ToolsPage = () => {
   ]
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 px-2 pt-2">
+    <div className="w-screen grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 justify-center items-center">
       {tools.map((tool) => (
-        <div className="w-full h-fit relative cursor-pointer hover:scale-105 transition overflow-hidden border-highlight">
+        <div className="w-fit lg:w-full h-fit relative cursor-pointer hover:scale-105 transition overflow-hidden border-highlight">
           <Card
               key={tool.id}
               isFooterBlurred

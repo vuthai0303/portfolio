@@ -128,7 +128,7 @@ const ExperiencePage = () => {
   ]
   return (
     <div className="flex justify-center items-start">
-      <Card className="min-w-[600px] w-full h-full rounded-2xl bg-background/90" radius="none">
+      <Card className="w-screen h-full rounded-2xl bg-background/90" radius="none">
         <CardBody className="p-20">
           <TimeLine timeline={timeline} />
         </CardBody>

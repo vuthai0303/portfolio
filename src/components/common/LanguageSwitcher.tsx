@@ -28,18 +28,18 @@ const LanguageSwitcher = () => {
   return (
     <div>
       <Select
-        className="pr-1 w-[150px]"
+        className="pr-1 w-[80px] lg:w-[100px]"
         defaultSelectedKeys={[curLanguage]}
         selectedKeys={[curLanguage]}
         selectionMode='single'
         label=""
-        endContent={<EarthIcon />}
+        endContent={<EarthIcon className='hidden lg:flex' />}
         variant='flat'
         color='primary'
         onChange={(e) => changeLanguage(e.target.value)}
       >
-        <SelectItem key="en">English</SelectItem>
-        <SelectItem key="vi">Tiếng Việt</SelectItem>
+        <SelectItem key="en">EN</SelectItem>
+        <SelectItem key="vi">VN</SelectItem>
       </Select>
     </div>
   )

@@ -11,16 +11,16 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-center items-start">
-        <Card className="min-w-[600px] w-full h-full rounded-2xl bg-background/90" radius="none">
-          <CardBody className="p-10">
-            <div className="flex flex-row px-10">
+      <div className="flex justify-center items-start scroll-auto">
+        <Card className="w-screen h-full rounded-2xl bg-background/90" radius="none">
+          <CardBody className="py-10 px-2 lg:px-10">
+            <div className="flex flex-col lg:flex-row items-center lg:justify-start px-2 lg:px-10">
               {/* title is here */}
               <Avatar
-                className="w-25 h-25 text-large"
+                className="w-36 h-36 text-large"
                 src="https://i.pravatar.cc/150?u=a04258114e29026708c"
               />
-              <div className="text-3xl md:text-6xl font-bold tracking-tight flex flex-row items-center ml-10">
+              <div className="text-2xl lg:text-3xl font-bold tracking-tight flex flex-row items-center text-balance">
                 Hi,
                 <Typewriter
                   text={[
@@ -30,15 +30,15 @@ const HomePage: React.FC = () => {
                     t('Home.title.title_4'),
                   ]}
                   speed={200}
-                  className="ml-2 font-display text-center drop-shadow-sm text-3xl md:text-6xl font-bold tracking-tight"
+                  className="ml-2 font-display text-center drop-shadow-sm text-2xl lg:text-3xl font-bold tracking-tight"
                 />
               </div>
             </div>
-            <div className="flex flex-row px-10">
+            <div className="flex flex-row px-2 lg:px-10 text-balance">
               <div className="flex flex-col">
                 {/* description is here */}
-                <div className="flex flex-row">
-                  <div className="w-1/2 p-3 pr-5 flex flex-col justify-between">
+                <div className="flex flex-col lg:flex-row">
+                  <div className="w-full lg:w-1/2 p-3 pr-5 flex flex-col justify-between">
                     <div className="flex flex-col">
                       <p className="mt-6 text-base text-muted-foreground">
                         {t('Home.description')}
@@ -75,7 +75,7 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-1/2 h-[400px]">
+                  <div className="w-full lg:w-1/2 h-[400px]">
                     <RotatingSphere />
                   </div>
                 </div>
