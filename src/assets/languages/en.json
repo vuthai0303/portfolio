@@ -52,38 +52,38 @@
   "Experience": {
     "systemEXE": {
       "title": "SystemEXE Vietnam",
-      "description": "Full stack developer at SystemEXE Vietnam. Responsible for developing and upgrading client projects.",
+      "description": "Full-stack Developer at SystemEXE Vietnam. Responsible for developing and upgrading projects based on requirements from Japanese clients.",
       "carshare": {
         "title": "CarShare",
-        "description": "This project upgrades Spring Boot 3.5 to Spring Boot 4, Jackson 2 to Jackson 3, and includes related libraries."
+        "description": "A car rental management project. Served as a Team Lead for a group of 5 members. Primary responsibilities included upgrading the system from Spring Boot 3.5 to Spring Boot 4, transitioning from Jackson 2 to Jackson 3, and updating all related libraries to their latest versions."
       },
       "heatmap": {
-        "title": "Heatmap - Monitoring System",
-        "description": "IOT project that displays temperature, humidity, and pressure of the office."
+        "title": "Heatmap",
+        "description": "An IoT project for monitoring and displaying office temperature, humidity, and pressure. Key responsibilities involved gathering requirements and developing the entire system from scratch, including the frontend, backend, and IoT device integration."
       },
       "Komatsu": {
-        "title": "Komatsu - Administrator System",
-        "description": "A web-based management system that provides administrative functions and a customer interface."
+        "title": "Administration System",
+        "description": "A web-based management system providing administrative functions and customer interfaces. Main tasks included developing new features per client requests, as well as investigating and optimizing SQL query performance."
       },
       "Mars": {
-        "title": "Mars - Accounting Management System",
-        "description": "The accounting management system supports businesses in recording, managing documents and ledgers, and generating financial reports efficiently, ensuring transparency and regulatory compliance."
+        "title": "Accounting Management System",
+        "description": "An accounting system that supports businesses in recording transactions, managing vouchers/ledgers, and generating financial reports. Primary duties included upgrading the .NET Framework version, migrating from Seasar to Dapper, and testing/fixing batch processing (.bat) tasks."
       },
       "GCS": {
-        "title": "GCS - Contract Management System",
-        "description": "Contract Management System is a comprehensive digital solution tailored to optimize property management and real estate transactions through advanced technology. Designed to support multiple stakeholders — including agents, buyers, sellers, and administrators — the platform enables seamless management of property portfolios, customer interactions, and contract workflow"
+        "title": "Real Estate Contract Management System",
+        "description": "A comprehensive digital solution designed to optimize real estate management and transactions through advanced technology. Built to support multiple stakeholders—including agents, buyers, sellers, and administrators—the platform enables seamless management of property portfolios, client interactions, and contract workflows. Key responsibilities involved upgrading from Vue 2 to Vue 3, migrating Java 8 to Java 21, and developing new features based on technical designs."
       },
       "Fluzo": {
-        "title": "Fluzo - Music Copyright Management System",
-        "description": "Fluzo is a system to make copyright clearance efficient and to improve its accuracy in digital content distribution business."
+        "title": "Music Copyright Management System",
+        "description": "A system aimed at streamlining copyright licensing and improving accuracy within the digital content distribution sector. Main tasks included upgrading from Java 8 to Java 17 and utilizing Electron to embed existing web features into a desktop application."
       },
       "CIIC": {
-        "title": "CIIC - Application Management System",
-        "description": "Project to support application management."
+        "title": "Application Form Management System",
+        "description": "A system supporting the management of various application forms and documents. Primary responsibilities included receiving requirements and designs from Japanese clients and implementing features based on those specifications."
       },
       "RMS": {
-        "title": "RMS - Resource Management System",
-        "description": " Resource Management System: comprehensive system designed to optimize the allocation and utilization of a company's resources, including personnel, equipment, time, and financial assets."
+        "title": "Resource Management System",
+        "description": "A comprehensive system designed to optimize the allocation and utilization of company resources, including personnel, equipment, time, and financial assets. The project followed the Agile methodology. My main role involved analyzing client requirements, followed by designing and developing new features for the system."
       }
     },
     "topebox": {
