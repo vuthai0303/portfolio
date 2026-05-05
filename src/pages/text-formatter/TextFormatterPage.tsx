@@ -31,7 +31,7 @@ const TextFormatterPage: React.FC = () => {
 
   return (
     <div className="flex justify-center items-start">
-      <Card className="w-screen rounded-lg bg-background h-fit" radius="none">
+      <Card className="w-full rounded-lg bg-background h-fit" radius="none">
         <CardBody className="p-10 overflow-hidden h-fit">
           <h1 className="text-3xl font-bold mb-6">{t('TextFormatter.title')}</h1>
           <p className="text-muted-foreground mb-6">{t('TextFormatter.description')}</p>

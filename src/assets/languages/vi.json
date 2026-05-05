@@ -22,7 +22,7 @@
       "title_4": "I'm a software engineer."
     },
     "title_desription": "Nhà phát triển Web Full-Stack, phát triển phần mềm, và Game.",
-    "description": "Tôi tên là Thái Duy Vũ, và là kỹ sư Khoa học Máy tính tốt nghiệp từ Đại học Bách Khoa TP. Hồ Chí Minh với hơn hai năm kinh nghiệm toàn diện trong lĩnh vực phát triển web fullstack. Sở hữu thái độ tích cực và nguồn năng lượng dồi dào, tôi thành thạo trong việc nhanh chóng học hỏi và áp dụng hiệu quả các công nghệ, ngôn ngữ lập trình, framework và thư viện mới. Tôi được biết đến là một thành viên nhóm có tinh thần hợp tác và hỗ trợ đồng nghiệp, góp phần xây dựng một môi trường làm việc tích cực và hiệu quả. Tuy có thiên hướng tập trung cao độ và chú trọng chi tiết một cách tự nhiên, điều này giúp nâng cao khả năng tập trung sâu vào công việc, tôi luôn cam kết sâu sắc vào việc không ngừng hoàn thiện bản thân thông qua các dự án thử thách. Tôi tự tin rằng sự chủ động, tinh thần cầu tiến và khả năng thích ứng với những tiến bộ công nghệ của mình sẽ cho phép tôi mang lại giá trị đáng kể cho tổ chức và đội ngũ của quý vị."
+    "description": "Tôi tên là Thái Duy Vũ, và là kỹ sư Khoa học Máy tính tốt nghiệp tại Đại học Bách Khoa TP. Hồ Chí Minh với hơn 3 năm kinh nghiệm xây dựng các ứng dụng web có khả năng mở rộng bằng Java, Spring Boot, React, Angular và Vue. Sở hữu thái độ tích cực và nguồn năng lượng dồi dào, tôi có khả năng nhanh chóng học hỏi và áp dụng hiệu quả các công nghệ, ngôn ngữ lập trình, framework và thư viện mới vào trong dự án. Tôi được biết đến là một thành viên nhóm có tinh thần hợp tác và hỗ trợ đồng nghiệp, góp phần xây dựng một môi trường làm việc tích cực và hiệu quả. Tôi luôn cam kết sâu sắc vào việc không ngừng hoàn thiện bản thân thông qua các dự án thử thách. Tôi tự tin rằng sự chủ động, tinh thần cầu tiến và khả năng thích ứng với những tiến bộ công nghệ của mình sẽ cho phép tôi mang lại giá trị đáng kể cho tổ chức và đội ngũ của quý vị."
   },
   "Project": {
     "StudyLanguage": {
@@ -105,7 +105,7 @@
     "title": "Công cụ định dạng JSON",
     "description": "Định dạng, kiểm tra và làm đẹp dữ liệu JSON của bạn với công cụ dễ sử dụng này. Dán JSON của bạn, tải lên tệp, hoặc sử dụng clipboard để bắt đầu.",
     "inputJson": "Nhập JSON",
-    "formattedOutput": "Kết quả đã định dạng",
+    "formattedOutput": "Kết quả",
     "enterOrPasteJson": "Nhập hoặc dán JSON của bạn tại đây...",
     "pasteFromClipboard": "Dán từ Clipboard",
     "uploadFile": "Tải lên tệp",

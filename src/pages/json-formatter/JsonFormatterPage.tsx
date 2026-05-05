@@ -107,7 +107,7 @@ const JsonFormatterPage: React.FC = () => {
 
   return (
     <div className="flex justify-center items-start">
-      <Card className="w-screen lg:w-4/5 rounded-lg bg-background h-fit" radius="none">
+      <Card className="w-full rounded-lg bg-background h-fit" radius="none">
         <CardBody className="p-10 overflow-hidden h-fit">
           <h1 className="text-3xl font-bold mb-6">{t('JsonFormatter.title')}</h1>
           <p className="text-muted-foreground mb-6">{t('JsonFormatter.description')}</p>
@@ -125,11 +125,11 @@ const JsonFormatterPage: React.FC = () => {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row gap-8 h-fit">
-            <div className="flex-1">
+          <div className="flex flex-col md:flex-row gap-5 h-fit">
+            <div className="w-full md:w-1/2">
               <JsonInput value={inputJson} onChange={setInputJson} onPaste={handlePaste} />
             </div>
-            <div className="flex-1">
+            <div className="w-full md:w-1/2">
               <JsonOutput
                 formattedJson={formattedJson}
                 error={error}

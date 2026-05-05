@@ -30,7 +30,7 @@ const ToolsPage = () => {
   ]
 
   return (
-    <div className="w-screen grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 justify-center items-center">
+    <div className="w-full grid lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 gap-10 justify-center items-center">
       {tools.map((tool) => (
         <div className="w-fit lg:w-full h-fit relative cursor-pointer hover:scale-105 transition overflow-hidden border-highlight">
           <Card

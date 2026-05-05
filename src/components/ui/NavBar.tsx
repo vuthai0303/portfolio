@@ -42,8 +42,8 @@ const NavBar = () => {
   return (
     <>
     {isOpenSplashCursor && <SplashCursor />}
-    <div className="w-fit min-h-screen h-fit overflow-hidden scroll-auto bg-gradient-to-r from-fuchsia-500 to-indigo-600 flex justify-center">
-      <div className=" w-screen lg:w-[80%] h-fit p-3 flex flex-col gap-5">
+      <div className="w-full min-h-screen h-fit overflow-hidden bg-gradient-to-r from-fuchsia-500 to-indigo-600 flex justify-center">
+      <div className="w-full lg:w-[80%] h-fit p-3 flex flex-col gap-5">
         <Navbar
           isBordered
           classNames={{ base: 'rounded-full top-2 bg-background/90', wrapper: 'max-w-[100%]' }}

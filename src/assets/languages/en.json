@@ -23,7 +23,7 @@
       "title_4": "I'm a software engineer."
     },
     "title_desription": "Full-Stack web developer, Software engineer, and Game developer.",
-    "description": "My name is Thái Duy Vũ, and a Computer Science Engineer from Ho Chi Minh City University of Technology with over two years of comprehensive experience in fullstack web development. Possessing a strong positive attitude and high energy, I am adept at rapidly learning and effectively applying new technologies, programming languages, frameworks, and libraries. Known for being a collaborative and supportive team member, contributing to a positive and productive work environment. While naturally focused and detail-oriented, which enhances my ability to concentrate deeply on tasks, I am deeply committed to continuous self-improvement through challenging projects. I am confident that my proactive approach, eagerness for growth, and adaptability to technological advancements will enable me to deliver significant value to your organization and team."
+    "description": "My name is Thai Duy Vu, a Computer Science Engineer graduated from Ho Chi Minh City University of Technology (HCMUT). I bring over 3 years of experience in building scalable web applications using Java, Spring Boot, React, Angular, and Vue. Characterized by a positive attitude and high energy, I have a proven ability to quickly learn and effectively apply new technologies, programming languages, frameworks, and libraries to real-world projects. I am recognized as a collaborative team player who actively supports colleagues, contributing to a positive and productive work environment. I am deeply committed to continuous self-improvement through challenging projects. I am confident that my proactiveness, growth mindset, and adaptability to technological advancements will allow me to deliver significant value to your team and organization."
   },
   "Project": {
     "StudyLanguage": {
@@ -105,8 +105,8 @@
   "JsonFormatter": {
     "title": "JSON Formatter",
     "description": "Format, validate, and beautify your JSON data with this easy-to-use tool. Paste your JSON, upload a file, or use the clipboard to get started.",
-    "inputJson": "Input JSON",
-    "formattedOutput": "Formatted Output",
+    "inputJson": "Input",
+    "formattedOutput": "Output",
     "enterOrPasteJson": "Enter or paste your JSON here...",
     "pasteFromClipboard": "Paste from Clipboard",
     "uploadFile": "Upload File",

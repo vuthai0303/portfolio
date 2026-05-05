@@ -38,8 +38,9 @@ const JsonInput: React.FC<JsonInputProps> = ({ value, onChange, onPaste }) => {
     <div className="flex flex-col gap-3 h-fit">
       <div className="flex justify-between items-center">
         <h3 className="text-lg font-semibold">{t('JsonFormatter.inputJson')}</h3>
-        <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row gap-2 justify-end">
           <Button
+            className='hidden md:flex'
             color="primary"
             variant="flat"
             startContent={<Clipboard size={18} />}

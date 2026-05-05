@@ -39,8 +39,9 @@ const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJson, error, onCopy, o
     <div className="flex flex-col gap-3 h-full">
       <div className="flex justify-between items-start">
         <h3 className="text-lg font-semibold">{t('JsonFormatter.formattedOutput')}</h3>
-        <div className="flex gap-2">
+        <div className="flex flex-col lg:flex-row gap-2 justify-end">
           <Button
+            className='hidden md:flex'
             color="primary"
             variant="flat"
             startContent={<Copy size={18} />}
@@ -63,7 +64,7 @@ const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJson, error, onCopy, o
         </div>
       </div>
 
-      <Code className="h-full p-2">
+      <Code className="h-full p-2 min-h-[500px]">
         {error ? (
           <div className="flex flex-col justify-center items-center">
             <AlertTriangle className="text-danger" size={20} />
@@ -72,7 +73,7 @@ const JsonOutput: React.FC<JsonOutputProps> = ({ formattedJson, error, onCopy, o
         ) : formattedJson ? (
           renderJsonWithHighlight()
         ) : (
-          <div className="p-4 rounded-lg text-center text-gray-500">
+          <div className="p-4 rounded-lg text-gray-500 text-left text-wrap">
             {t('JsonFormatter.noJsonToDisplay')}
           </div>
         )}

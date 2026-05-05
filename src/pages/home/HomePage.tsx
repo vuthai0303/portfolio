@@ -2,9 +2,9 @@ import { Avatar, Button, Card, CardBody, Divider, Link } from '@heroui/react'
 import { Facebook, Github, Instagram, Linkedin, Mail } from 'lucide-react'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import SnakesGame from '../../components/snakes-game/SnakesGame'
 import RotatingSphere from '../../components/ui/RotatingSphere'
 import Typewriter from '../../components/ui/Typewriter'
-import SnakesGame from '../../components/snakes-game/SnakesGame'
 
 const HomePage: React.FC = () => {
   const { t } = useTranslation()
@@ -18,9 +18,9 @@ const HomePage: React.FC = () => {
               {/* title is here */}
               <Avatar
                 className="w-36 h-36 text-large"
-                src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+                src="/portfolio/avatar.JPG"
               />
-              <div className="text-2xl lg:text-3xl font-bold tracking-tight flex flex-row items-center text-balance">
+              <div className="text-2xl lg:text-3xl ml-0 lg:ml-6 font-bold tracking-tight flex flex-row items-center text-balance">
                 Hi,
                 <Typewriter
                   text={[
@@ -38,9 +38,9 @@ const HomePage: React.FC = () => {
               <div className="flex flex-col">
                 {/* description is here */}
                 <div className="flex flex-col lg:flex-row">
-                  <div className="w-full lg:w-1/2 p-3 pr-5 flex flex-col justify-between">
+                  <div className="w-full lg:w-1/2 p-3 flex flex-col justify-between">
                     <div className="flex flex-col">
-                      <p className="mt-6 text-base text-muted-foreground">
+                      <p className="mt-2 lg:mt-6 text-base text-muted-foreground text-justify">
                         {t('Home.description')}
                       </p>
                     </div>
@@ -83,14 +83,14 @@ const HomePage: React.FC = () => {
             </div>
             <Divider className="my-4" />
             <div className="w-full overflow-hidden">
-              {/* <div className="">
+              <div className="display lg:hidden">
                 <img
                   className="w-full"
                   src="/portfolio/github-contribution-snake/github-contribution-grid-snake.svg"
                   alt="github-contribution"
                 />
-              </div> */}
-              <div className='w-full h-[300px]'>
+              </div>
+              <div className='hidden lg:flex w-full h-[300px]'>
                 <SnakesGame />
               </div>
             </div>

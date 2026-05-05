@@ -120,8 +120,6 @@ const SnakesGame: React.FC<SnakesGameProps> = () => {
   }
 
   const updateDirectionSnake = (snake: SnakeInfor) : SnakeInfor => {
-    // if (!snake || snake?.tail || snake?.head) return snake;
-
     const preHead = snake.head
     const preTail: Square[] = snake.tail
     let prevDec : Vec2 | null = preHead?.direction?.clone() ?? null;
