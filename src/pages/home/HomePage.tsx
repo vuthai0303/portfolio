@@ -75,7 +75,7 @@ const HomePage: React.FC = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full lg:w-1/2 h-[400px]">
+                  <div className="w-full lg:w-1/2 h-[500px]">
                     <RotatingSphere />
                   </div>
                 </div>

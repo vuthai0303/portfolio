@@ -48,25 +48,25 @@ const NavBar = () => {
           isBordered
           classNames={{ base: 'rounded-full top-2 bg-background/90', wrapper: 'max-w-[100%]' }}
         >
-          <NavbarContent>
-            <NavbarBrand>
-              <img
-                src="/portfolio/logo.png"
-                className="d-inline-block align-top size-12 lg:size-16"
-                alt="VT logo"
-              />
-              <GradientText
-                colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
-                animationSpeed={5}
-                showBorder={false}
-                className="font-bold text-xl ml-2 hidden lg:visible"
-                baseStyle={{ fontWeight: 700 }}
-              >
-                Vũ Thái
-              </GradientText>
-            </NavbarBrand>
-          </NavbarContent>
-          <NavbarContent className="flex gap-4" justify="center">
+            <NavbarContent className='hidden sm:flex min-w-fit'>
+              <NavbarBrand className='w-fit'>
+                <img
+                  src="/portfolio/logo.png"
+                  className="flex align-top size-12 lg:size-16"
+                  alt="VT logo"
+                />
+                <GradientText
+                  colors={['#DD62ED', '#4014ff', '#DD62ED', '#4014ff', '#DD62ED']}
+                  animationSpeed={5}
+                  showBorder={false}
+                    className="min-w-fit font-bold text-xl ml-2 hidden lg:block"
+                  baseStyle={{ fontWeight: 700 }}
+                >
+                  Vũ Thái
+                </GradientText>
+              </NavbarBrand>
+            </NavbarContent>
+          <NavbarContent className="flex gap-4 w-full" justify="center">
             <NavBarItems navBarLst={navBarItems} isMenuItem={false} />
           </NavbarContent>
           <NavbarContent justify="end" className='hidden lg:flex'>
