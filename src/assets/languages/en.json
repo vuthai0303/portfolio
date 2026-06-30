@@ -53,6 +53,10 @@
     "systemEXE": {
       "title": "SystemEXE Vietnam",
       "description": "Full-stack Developer at SystemEXE Vietnam. Responsible for developing and upgrading projects based on requirements from Japanese clients.",
+      "sdm": {
+        "title": "SDM Web",
+        "description": "SDM Web is an internal web platform for the SDM (System Data Management) system, supporting critical business operations such as equipment, construction, inspection, and approval. The project provides a development and operational environment for the web, API, batch, and related data modules in the core system."
+      },
       "carshare": {
         "title": "CarShare",
         "description": "A car rental management project. Served as a Team Lead for a group of 5 members. Primary responsibilities included upgrading the system from Spring Boot 3.5 to Spring Boot 4, transitioning from Jackson 2 to Jackson 3, and updating all related libraries to their latest versions."

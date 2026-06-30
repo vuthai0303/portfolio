@@ -52,6 +52,10 @@
     "systemEXE": {
       "title": "SystemEXE Việt Nam",
       "description": "Lập trình viên full stack tại SystemEXE ViệtNam. Thực hiện phát triển, nâng cấp các dự án theo yêu cầu từ khách hàng bên Nhật.",
+      "sdm": {
+        "title": "SDM Web",
+        "description": "SDM Web là nền tảng web nội bộ cho hệ thống SDM (System Data Management), phục vụ các nghiệp vụ quan trọng như thiết bị, công trình, kiểm tra và phê duyệt. Dự án cung cấp môi trường phát triển và vận hành cho các module web, API, batch và dữ liệu liên quan trong hệ thống lõi."
+      },
       "carshare": {
         "title": "CarShare",
         "description": "Dự án quản lý cho thuê xe. Đảm nhiệm vai trò quản lý nhóm 5 người, công việc chính trong dự án là nâng cấp từ Spring boot 3.5 -> Spring boot 4, jackson2 -> jackson3 và cùng các thư viện liên quan lên phiên bản mới nhất."
